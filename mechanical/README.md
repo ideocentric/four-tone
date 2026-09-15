@@ -26,7 +26,7 @@ pipe above it is the resonator.
 
 ### Head joint (`fan_organ_pipe_rev_02`)
 
-Overall 68.5 x 67 x 150 mm. Dimensions below are read from the model's
+Overall 67 x 67 x 150 mm. Dimensions below are read from the model's
 sketch constraints; the roles are inferred from the constraint names.
 
 | Parameter        | Value     | Role |
@@ -40,7 +40,7 @@ sketch constraints; the roles are inferred from the constraint names.
 
 ### Fan caddy (`fan_mount_rev-01`)
 
-Overall 53 x 19.74 x 82 mm.
+Overall 53 x 19.5 x 82 mm.
 
 | Parameter        | Value     | Role |
 | ---------------- | --------- | ---- |
@@ -51,10 +51,42 @@ Overall 53 x 19.74 x 82 mm.
 
 ## Printing
 
-Print-ready STL files have not been exported yet, so `stl/` is empty. To print
-the parts, open each model in FreeCAD, select its `Body`, and use
-**File > Export** to save an STL. Export from the saved model without
-recomputing it (see the version note below).
+Print-ready STLs are in `stl/`, in millimetres, oriented as modelled (the head
+joint stands on its caddy end, pipe socket up):
+
+| File | Part | Volume | Size | Triangles |
+| ---- | ---- | ------ | ---- | --------- |
+| `stl/head-joint_rev-02.stl` | Head joint | 289.5 cm³ | 67 x 67 x 150 mm | 4,660 |
+| `stl/fan-caddy_rev-01.stl` | Fan caddy | 8.3 cm³ | 53 x 19.5 x 82 mm | 47,400 |
+
+Both were exported from the saved FreeCAD geometry without recomputing (see the
+version note below), and checked as closed, manifold meshes with outward normals
+and no self-intersections. Sampled against the CAD surfaces, the largest
+deviation is 0.040 mm on the head joint and 0.034 mm on the caddy. The head joint
+uses FreeCAD's standard mesher (0.05 mm linear, 0.20 rad angular deflection);
+the caddy uses Netgen at its very fine setting, because the standard mesher left
+small self-intersections in its funnel.
+
+Print services such as JLC3DP quote directly from these files; select millimetres
+when uploading. The head joint is solid, so a resin or MJF print uses the full
+289.5 cm³, whereas an FDM print with partial infill uses less plastic. About 60%
+of that volume (174 cm³) is the bottom 50 mm, which is solid apart from the
+airway, like a recorder's block. Hollowing that section, while keeping walls
+around the airway, is the most effective way to cut the cost of a resin or MJF
+print.
+
+JLC3DP instant quotes for the head joint, 2026-09-15, per unit before shipping:
+
+| Material | Price |
+| -------- | ----- |
+| 9600 resin (SLA, matte white) | $26.35 |
+| Imagine Black resin (SLA) | $78.20 |
+
+Prices change; re-quote from the STL before ordering.
+
+To re-export after changing a model, select its `Body` in FreeCAD and use
+**File > Export**, then check the mesh with **Meshes > Analyze > Evaluate and
+repair mesh**.
 
 Print material, layer height, infill, orientation and supports: TBD. Record the
 settings that worked in `slicer/` as a slicer project, or here.
@@ -83,7 +115,7 @@ Dimensions, internal layout and photos: TBD, to be recorded in `enclosure/`.
 | Folder       | Contents |
 | ------------ | -------- |
 | `cad/`       | FreeCAD source models. `cad/specifications/` is git-ignored: it holds the seller's fan drawings locally, which cannot be redistributed. |
-| `stl/`       | Print-ready exports, named by part and revision. Empty so far. |
+| `stl/`       | Print-ready exports, named by part and revision. |
 | `slicer/`    | Slicer project files (`.3mf`) with the settings that printed well. Empty so far. |
 | `enclosure/` | Wooden box: dimensions, layout, photos. Empty so far. |
 
