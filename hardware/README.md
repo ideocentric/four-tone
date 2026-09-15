@@ -1,26 +1,25 @@
 # Hardware
 
-## `pcb/`
+| Path | Contents |
+| ---- | -------- |
+| [`parts.md`](parts.md) | Everything to buy or make for the instrument |
+| [`pcb/`](pcb/README.md) | The six fan driver: KiCad schematic and layout, BOM, circuit and layout notes |
+| `pcb/fabrication/rev-a/` | Gerbers, drill files, BOM and CPL as ordered from JLCPCB |
+| [`art/`](art/README.md) | Source artwork for the board's silkscreen logo |
+| `datasheets/` | Reference datasheets (Arduino Nano pinout) |
 
-KiCad project for the board the Arduino plugs into, which switches the four
-12 V fans. Keep the KiCad project files (`.kicad_pro`, `.kicad_sch`,
-`.kicad_pcb`) directly in `pcb/`.
+## Editing the board
 
-- `libraries/symbols/`, `libraries/footprints/`, `libraries/3dmodels/`:
-  anything not in the stock KiCad libraries. Reference them from the project
-  library tables with `${KIPRJMOD}/libraries/...` so the project opens on any
-  machine.
-- `fabrication/<rev>/`: outputs actually sent to a fab house (Gerbers, drill,
-  BOM, pick-and-place), e.g. `fabrication/rev-a/`. Scratch exports in `pcb/`
-  itself are git-ignored.
+The KiCad project is `pcb/four-tone-driver.kicad_pro` and needs KiCad 9. It uses
+only KiCad's standard symbol and footprint libraries, so it opens without extra
+setup. `pcb/libraries/` is there for project-specific parts if any are added
+later; reference them with `${KIPRJMOD}/libraries/...` so the project still opens
+on other machines.
 
-`*.kicad_prl` (per-user view state), backups and lock files are git-ignored.
+When the board changes, give it a new revision: update the revision on the
+silkscreen and in the schematic title block, and generate a new
+`pcb/fabrication/rev-<x>/` folder rather than overwriting `rev-a`, which records
+what was actually made.
 
-## `art/`
-
-Source artwork for the silkscreen: the ensō house mark (`enso-oro.svg`). See
-`art/README.md` for its provenance and how the board logo is generated from it.
-
-## `datasheets/`
-
-Datasheets for the parts the board design depends on.
+Per-user KiCad files (`*.kicad_prl`, `fp-info-cache`), backups and lock files are
+git-ignored.

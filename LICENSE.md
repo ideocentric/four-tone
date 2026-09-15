@@ -6,8 +6,8 @@ versions be shared under the same terms.
 
 | Part | Paths | License |
 | ---- | ----- | ------- |
-| Firmware | `firmware/`, `platformio.ini` | [GNU GPL v3.0 or later](LICENSES/GPL-3.0-or-later.txt) |
-| Hardware | `hardware/` (PCB design, parts list) | [CERN Open Hardware Licence v2, Strongly Reciprocal](LICENSES/CERN-OHL-S-2.0.txt) |
+| Firmware and tools | `firmware/`, `platformio.ini`, `tools/` | [GNU GPL v3.0 or later](LICENSES/GPL-3.0-or-later.txt) |
+| Hardware | `hardware/` (PCB design, parts list), `docs/images/six-fan-driver-rev-a-schematic.pdf` | [CERN Open Hardware Licence v2, Strongly Reciprocal](LICENSES/CERN-OHL-S-2.0.txt) |
 | Design | `mechanical/` (3D models), `docs/`, and everything else not listed above | [Creative Commons Attribution-ShareAlike 4.0](LICENSES/CC-BY-SA-4.0.txt) |
 
 Documentation inside a part's folder (for example `firmware/README.md`)

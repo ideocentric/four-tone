@@ -12,15 +12,22 @@ path = ["**"]
 SPDX-FileCopyrightText = "2024-2026 Matt Comeione"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
 
-# Firmware
+# Firmware and tools
 [[annotations]]
-path = ["firmware/**", "platformio.ini"]
+path = ["firmware/**", "platformio.ini", "tools/**"]
 SPDX-FileCopyrightText = "2024-2026 Matt Comeione"
 SPDX-License-Identifier = "GPL-3.0-or-later"
 
 # Hardware
 [[annotations]]
 path = ["hardware/**"]
+SPDX-FileCopyrightText = "2026 Matt Comeione"
+SPDX-License-Identifier = "CERN-OHL-S-2.0"
+
+# Schematic export in the docs is a hardware design document
+[[annotations]]
+path = ["docs/images/six-fan-driver-rev-a-schematic.pdf"]
+precedence = "override"
 SPDX-FileCopyrightText = "2026 Matt Comeione"
 SPDX-License-Identifier = "CERN-OHL-S-2.0"
 

@@ -1,45 +1,71 @@
 # four-tone
 
-An Arduino plays a sequence of four notes by switching four 12 V 5015 blower
-fans. Each fan blows into a 3D printed, recorder-style beak fitted with a 2" PVC
-pipe, so each fan/pipe pair sounds one note. See `hardware/parts.md` for the
-parts list.
+A four-note organ played by computer fans. An Arduino Nano runs a sequence
+through four 12 V blower fans, and each fan blows into a 3D printed,
+recorder-style head joint on a length of 2" PVC pipe. All four voices are identical
+except for the pipe length, which sets the note.
 
-## Layout
+![Six fan driver rev A](docs/images/six-fan-driver-rev-a.png)
+
+## How it works
+
+```mermaid
+flowchart LR
+    PSU["Power supply<br/>12 V + 5 V"] --> BOARD["Six fan driver<br/>+ Arduino Nano"]
+    BOARD -- "PWM, 4 channels" --> FANS["4 x 5015 blower fans"]
+    FANS --> HEADS["Printed head joints"] --> PIPES["PVC pipes<br/>cut to pitch"]
+```
+
+- **Firmware:** the Nano steps through 24 phrases (every ordering of the four
+  pipes, then a rest) against 5 rhythms, at 50 BPM. Each note fades its fan up
+  over 250 ms and back down after. The pattern takes 14.4 minutes to repeat.
+- **Driver board:** a carrier for the Nano with six MOSFET fan channels, an
+  indicator LED per channel, and a screw terminal for the supply. four-tone uses
+  four channels.
+- **Voices:** a 5015 blower in a printed caddy, hot glued into a printed head
+  joint, on a 2" PVC pipe. The head joint holds the windway, window and labium,
+  like the head joint of a contrabass recorder or the mouth of an organ flue pipe.
+
+## Status
+
+| Part | State |
+| ---- | ----- |
+| Head joint and fan caddy | Designed and printed; the head joint is tested with 2" PVC |
+| Enclosure | Built: an open-bottom wooden box. Dimensions not yet documented |
+| Driver board | Rev A designed and ordered from JLCPCB (2026-09-15) |
+| Firmware | Builds for the Nano; not yet run on the rev A board |
+| Pipes | Target notes and lengths not yet chosen |
+
+## Documentation
+
+| Guide | For |
+| ----- | --- |
+| [Build guide](docs/build.md) | Assembly, wiring, and step-by-step power-up checks |
+| [Tuning guide](docs/tuning.md) | Finding pipe lengths for your notes, with a calculator |
+| [Firmware](firmware/README.md) | Building, uploading, how the sequence works, changing the music |
+| [Driver board](hardware/pcb/README.md) | Schematic, BOM, circuit and layout notes |
+| [Parts list](hardware/parts.md) | Everything to buy or make |
+| [Mechanical](mechanical/README.md) | Head joint and caddy models, printing, enclosure |
+
+## Repository layout
 
 ```
 four-tone/
-├── platformio.ini            PlatformIO build config (CLion opens the repo root)
-├── firmware/                 Arduino code
-│   ├── arduino-original/     The original .ino sketch, kept for reference
-│   ├── src/                  Converted C++ sources (main.cpp)
-│   ├── include/              Project headers (pin map, note sequence, config)
-│   ├── lib/                  Project-private libraries
-│   └── test/                 PlatformIO unit tests
+├── platformio.ini        Firmware build configuration
+├── firmware/             Arduino firmware (PlatformIO, C++)
 ├── hardware/
-│   ├── pcb/                  KiCad project for the Arduino carrier / fan driver board
-│   │   ├── libraries/        Project-specific symbols, footprints, 3D models
-│   │   └── fabrication/      Released Gerbers, drill, BOM, placement, one folder per revision
-│   └── datasheets/           Fans, MOSFETs, connectors, regulators
-├── mechanical/
-│   ├── cad/                  FreeCAD models: beak and fan caddy
-│   ├── stl/                  Print-ready exports
-│   ├── slicer/               Slicer projects (.3mf); sliced G-code is not committed
-│   └── enclosure/            Open-bottom wooden box for the voices and power supply
-└── docs/                     Build notes, wiring, tuning, photos
+│   ├── parts.md          Parts list
+│   ├── pcb/              Six fan driver: KiCad project and fabrication files
+│   ├── art/              Silkscreen logo source
+│   └── datasheets/       Reference datasheets
+├── mechanical/           FreeCAD models for the head joint and fan caddy
+├── tools/                pipe_length.py, the tuning calculator
+└── docs/                 Build and tuning guides, images
 ```
-
-## Firmware in CLion
-
-1. Install PlatformIO Core: `brew install platformio` (or `pipx install platformio`).
-2. In CLion, install the **PlatformIO for CLion** plugin.
-3. Open the repo root. CLion detects `platformio.ini` and offers the PlatformIO
-   run configurations (Build, Upload, Monitor).
-
-See `firmware/README.md` for converting the `.ino` sketch.
 
 ## License
 
-Copyleft throughout: firmware under GPL-3.0-or-later, hardware under
-CERN-OHL-S-2.0, and mechanical design and documentation under CC-BY-SA-4.0.
-See [LICENSE.md](LICENSE.md) for details.
+Copyleft throughout: firmware and tools under GPL-3.0-or-later, the driver board
+under CERN-OHL-S-2.0, and the mechanical design and documentation under
+CC-BY-SA-4.0. See [LICENSE.md](LICENSE.md). Per-file details are in
+[REUSE.toml](REUSE.toml).
