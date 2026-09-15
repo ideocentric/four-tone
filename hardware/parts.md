@@ -24,9 +24,9 @@ The 24 V output is unused.
 | 4 | Fan caddy | `../mechanical/cad/fan_mount_rev-01.FCStd` |
 | 4 | 2" PVC pipe, cut to pitch | Same stock for all four; length TBD per note |
 | 1 | Open-bottom wooden enclosure | `../mechanical/enclosure/` |
-| 1 | Driver PCB, rev A | `pcb/four-tone-driver.kicad_sch` (schematic done, layout not started) |
+| 1 | Six fan driver PCB, rev A | `pcb/four-tone-driver.kicad_pcb` (schematic and routed layout done, fabrication files not yet generated) |
 
-## Driver board, rev A
+## Six fan driver, rev A
 
 Arduino Nano carrier with six low-side MOSFET fan channels (four used by this
 project, two spare). Intended for JLCPCB fabrication and assembly. LCSC part
@@ -64,13 +64,13 @@ ordering.
   programming. Clones vary; check the boards actually used.
 - **Fan channel n:** Nano PWM pin, 1 k to the AO3400A gate, 100 k gate
   pull-down to GND so the fan stays off while the Nano resets or is removed.
-  The MOSFET switches the fan's return (J1n pin 2) to GND. An SS14 across the
+  The MOSFET switches the fan's return (connector pin 2) to GND. An SS14 across the
   fan clamps the lead inductance. A red LED with 4.7 k from +12 V to the
   switched return lights when the channel is on (about 2 mA), and follows the
   PWM ramp. It also lights with no fan plugged in, which helps bench testing.
-- **Fan connectors J11-J16:** pin 1 +12 V, pin 2 switched return. Check which
-  pin the red lead lands on in the fan's plug before wiring, and mark + on the
-  silkscreen during layout.
+- **Fan connectors J11-J16:** pin 1 +12 V (marked + on the silkscreen), pin 2
+  switched return. Check which pin the red lead lands on in the fan's plug
+  before wiring.
 - **Current:** fans are rated 0.18 A. Design margin is 0.5 A per channel for
   start-up, 3 A for all six. AO3400A at 5 V gate drive is about 30 mOhm, so
   under 10 mW per channel.
@@ -79,29 +79,53 @@ ordering.
 
 | Channel | Connector | Nano pin | PWM timer (Nano) | Firmware |
 | ------- | --------- | -------- | ---------------- | -------- |
-| 1 | J11 | D10 | Timer1, ~490 Hz | pipe 1 |
-| 2 | J12 | D9 | Timer1, ~490 Hz | pipe 2 |
+| 1 | J11 | D3 | Timer2, ~490 Hz | pipe 1 |
+| 2 | J12 | D5 | Timer0, ~980 Hz | pipe 2 |
 | 3 | J13 | D6 | Timer0, ~980 Hz | pipe 3 |
-| 4 | J14 | D5 | Timer0, ~980 Hz | pipe 4 |
-| 5 | J15 | D3 | Timer2, ~490 Hz | spare |
+| 4 | J14 | D9 | Timer1, ~490 Hz | pipe 4 |
+| 5 | J15 | D10 | Timer1, ~490 Hz | spare |
 | 6 | J16 | D11 | Timer2, ~490 Hz | spare |
+
+Channels follow the order of the pins along the Nano's header, so the six gate
+traces fan out without crossing. The firmware pin list
+(`firmware/include/sequence.h`) is `{3, 5, 6, 9}` for pipes 1-4.
 
 D13 is avoided: no PWM, and the bootloader flashes its LED at every reset,
 which would blip a fan.
 
-### Layout notes
+### Layout (rev A)
 
-- **Nano sockets:** J2 pin k is Nano pin k; J3 pin k is Nano pin 31-k. Place
-  both with pin 1 on the same row and the rows 15.24 mm apart, matching the
-  `Module:Arduino_Nano` footprint (pads 1 and 30). The Nano's USB end is at
-  pin 15, so keep that end at a board edge for cable access.
-- **J1 footprint:** the schematic uses KiCad's Phoenix MKDS 1.5 5.08 mm
-  footprint. Check its hole size and body outline against the LCSC datasheet
-  for C2915641 before routing.
+- **Board:** 130 x 70 mm, 2 layers, 2 mm corner radius, M3 holes 4 mm in from
+  each corner.
+- **Edges:** fan connectors J11-J16 in a row along the bottom edge, 19 mm
+  apart, each channel's parts directly behind its connector; power terminal J1
+  on the left edge with its wire entry facing out (+12 V at the top); Nano
+  sockets along the top right with the USB end at the right edge, marked
+  `USB >`. Power input and Nano sit directly above the channel row.
+- **Silkscreen:** "six fan driver rev A", the licence (CERN-OHL-S-2.0) and the
+  source location `github.com/ideocentric/four-tone`, which CERN-OHL-S asks
+  products to carry. The ensō house mark, 12 mm, sits right of that block
+  (source: `art/enso-oro.svg`). FAN1-FAN6 labels are on the board
+  edge side of each JST header, with + beside pin 1. The Nano outline carries
+  an outline of its USB connector, labelled USB, at the right-hand end between
+  the socket rows, showing which way round the Nano is seated.
+- **Nano sockets:** J2 pin k is Nano pin k; J3 pin k is Nano pin 31-k. The
+  placement was checked pad for pad against KiCad's `Module:Arduino_Nano`
+  footprint.
+- **Copper:** GND pours on both layers, stitched with vias. Net class `Power`
+  (+12 V, +5 V, GND, FANn_DRV) uses 0.8 mm tracks with 0.25 mm clearance;
+  everything else 0.3 mm with 0.2 mm clearance.
+- **Checks:** ERC 0 violations; DRC 0 violations, 0 unconnected, 0 schematic
+  parity issues (KiCad 9.0.6).
+- **J1 footprint:** KiCad's Phoenix MKDS 1.5 5.08 mm footprint. Check its hole
+  size and body outline against the LCSC datasheet for C2915641 before
+  ordering.
 - **Fan leads are 11"**, so the board has to sit within about 250 mm of each
   fan once the plug and some slack are allowed for.
-- **Traces:** 1 mm for the +12 V bus and GND returns, 0.5 mm for each fan's
-  switched return, signal width for gates.
+- **Before ordering:** JLCPCB's placement preview often shows SOT-23, SMA,
+  LED and electrolytic footprints rotated relative to KiCad. Check every
+  part's orientation (diode and LED cathode, capacitor polarity) in their
+  preview and correct the rotation there.
 
 ### PWM behaviour
 

@@ -5,12 +5,13 @@
 	(uuid "30f69f5d-efdb-5c9c-947e-6fb4de025531")
 	(paper "A3")
 	(title_block
-		(title "four-tone fan driver")
+		(title "six fan driver")
 		(date "2026-09-15")
 		(rev "A")
-		(company "four-tone")
+		(company "four-tone project")
 		(comment 1 "CERN-OHL-S-2.0")
 		(comment 2 "Parts: JLCPCB/LCSC numbers in the LCSC field")
+		(comment 3 "Source: https://github.com/ideocentric/four-tone")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x15_Socket"
@@ -1835,11 +1836,11 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "four-tone fan driver board"
+	(text "six fan driver board"
 		(exclude_from_sim no)
 		(at 25.4 22.86 0)
 		(effects (font (size 2.54 2.54) (bold yes)) (justify left bottom))
-		(uuid "7248ab84-20ae-5ed0-a507-ddbec582086a")
+		(uuid "6907ba2f-3d92-5036-b89a-eaa0222554e6")
 	)
 	(text "Arduino Nano carrier: 6 low-side MOSFET fan channels, 12 V fans, 5 V logic from the supply"
 		(exclude_from_sim no)
@@ -3045,7 +3046,7 @@
 		(stroke (width 0) (type default))
 		(uuid "4891910e-2b25-5aea-9502-1ba6653d2201")
 	)
-	(label "FAN5_PWM"
+	(label "FAN1_PWM"
 		(at 149.86 81.28 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
 		(uuid "fa2a4d14-9e39-506a-999b-9a8b0ab1fb07")
@@ -3059,7 +3060,7 @@
 		(stroke (width 0) (type default))
 		(uuid "4d8bafac-eefd-5006-9f86-e1dbe91abeff")
 	)
-	(label "FAN4_PWM"
+	(label "FAN2_PWM"
 		(at 149.86 86.36 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
 		(uuid "073a1666-b860-5d3d-84b1-28472136b18e")
@@ -3087,7 +3088,7 @@
 		(stroke (width 0) (type default))
 		(uuid "092420ab-7a1a-5b76-9561-468bf4f12c9f")
 	)
-	(label "FAN2_PWM"
+	(label "FAN4_PWM"
 		(at 149.86 96.52 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
 		(uuid "5bb4258c-ea85-5ac7-b832-dc9b07c5373b")
@@ -3097,7 +3098,7 @@
 		(stroke (width 0) (type default))
 		(uuid "5f04a3af-6a09-54a3-8646-57c215a62655")
 	)
-	(label "FAN1_PWM"
+	(label "FAN5_PWM"
 		(at 149.86 99.06 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
 		(uuid "de97efd9-65d7-5d29-9120-2d95d95eb814")
@@ -3449,7 +3450,7 @@
 		(stroke (width 0) (type default))
 		(uuid "4a8b27f5-65e6-5001-b9d4-98b83d103f18")
 	)
-	(label "FAN5_PWM"
+	(label "FAN1_PWM"
 		(at 213.36 83.82 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
 		(uuid "62a47e2b-0913-53ff-a67d-2713fe707fc7")
@@ -3463,7 +3464,7 @@
 		(stroke (width 0) (type default))
 		(uuid "8d678c08-c147-5a82-bb81-165b96dcfb07")
 	)
-	(label "FAN4_PWM"
+	(label "FAN2_PWM"
 		(at 213.36 88.9 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
 		(uuid "ea2b9a93-4250-5ad1-aad6-e99cabfc3de9")
@@ -3491,7 +3492,7 @@
 		(stroke (width 0) (type default))
 		(uuid "7d6ff554-d945-5dfd-961a-b5d802778eeb")
 	)
-	(label "FAN2_PWM"
+	(label "FAN4_PWM"
 		(at 213.36 99.06 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
 		(uuid "96a105da-a591-59de-95a2-944393d7c71b")
@@ -3501,7 +3502,7 @@
 		(stroke (width 0) (type default))
 		(uuid "06f26dc3-e01d-5dc4-99db-a32a894ce34b")
 	)
-	(label "FAN1_PWM"
+	(label "FAN5_PWM"
 		(at 213.36 101.6 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
 		(uuid "772dd145-9fdf-5577-b972-b1d3770b85b2")
@@ -3757,11 +3758,11 @@
 		(effects (font (size 1.27 1.27) (bold yes)) (justify left bottom))
 		(uuid "bb07fe91-5645-56e8-b0f1-441aaa19cefb")
 	)
-	(text "CHANNEL 1  (Nano D10, connector J11)"
+	(text "CHANNEL 1  (Nano D3, connector J11)"
 		(exclude_from_sim no)
 		(at 25.4 144.78 0)
 		(effects (font (size 1.27 1.27) (bold yes)) (justify left bottom))
-		(uuid "8ef7f774-2116-5d55-8c8b-78ef7e71bf38")
+		(uuid "78f2dd9e-c436-5f79-8886-8a013aacb83d")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -4399,11 +4400,11 @@
 		(effects (font (size 1.27 1.27)) (justify right bottom))
 		(uuid "067d7065-b57c-5422-a377-13bf4227f631")
 	)
-	(text "CHANNEL 2  (Nano D9, connector J12)"
+	(text "CHANNEL 2  (Nano D5, connector J12)"
 		(exclude_from_sim no)
 		(at 149.86 144.78 0)
 		(effects (font (size 1.27 1.27) (bold yes)) (justify left bottom))
-		(uuid "92a56751-049e-5c68-b31b-8da1bc89a864")
+		(uuid "9b0ea24d-2a34-5630-a1b2-658298284a91")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -5683,11 +5684,11 @@
 		(effects (font (size 1.27 1.27)) (justify right bottom))
 		(uuid "1c732138-bba4-5277-aa52-68c6fbf55e24")
 	)
-	(text "CHANNEL 4  (Nano D5, connector J14)"
+	(text "CHANNEL 4  (Nano D9, connector J14)"
 		(exclude_from_sim no)
 		(at 25.4 205.74 0)
 		(effects (font (size 1.27 1.27) (bold yes)) (justify left bottom))
-		(uuid "b52ff325-0b86-53aa-bec1-1978dc3e4d86")
+		(uuid "f43b86b9-b8b6-5d46-a7ba-eed5b57c20a5")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -6325,11 +6326,11 @@
 		(effects (font (size 1.27 1.27)) (justify right bottom))
 		(uuid "39d7642c-1d6f-5d18-8852-82ec40ee638a")
 	)
-	(text "CHANNEL 5  (Nano D3, connector J15)"
+	(text "CHANNEL 5  (Nano D10, connector J15)"
 		(exclude_from_sim no)
 		(at 149.86 205.74 0)
 		(effects (font (size 1.27 1.27) (bold yes)) (justify left bottom))
-		(uuid "4a71d64d-72f1-546a-8710-8170461c443f")
+		(uuid "a35308be-52d0-5246-b904-d28100babcc3")
 	)
 	(symbol
 		(lib_id "Device:R")

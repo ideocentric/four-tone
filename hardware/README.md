@@ -16,6 +16,11 @@ KiCad project for the board the Arduino plugs into, which switches the four
 
 `*.kicad_prl` (per-user view state), backups and lock files are git-ignored.
 
+## `art/`
+
+Source artwork for the silkscreen: the ensō house mark (`enso-oro.svg`). See
+`art/README.md` for its provenance and how the board logo is generated from it.
+
 ## `datasheets/`
 
 Datasheets for the parts the board design depends on.

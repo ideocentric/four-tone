@@ -31,5 +31,9 @@ under the GNU LGPL v2.1.
 ## Hardware source location
 
 CERN-OHL-S asks that products made from the design carry a notice pointing to
-where the source can be found. Use this repository's public URL for that
-notice.
+where the source can be found. The source location is:
+
+<https://github.com/ideocentric/four-tone>
+
+The driver board carries it on its silkscreen, next to the licence name, and
+the schematic carries it in the title block.

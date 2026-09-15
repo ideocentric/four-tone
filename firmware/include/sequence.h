@@ -28,9 +28,10 @@ class Sequence
     // micro
     Pipe pipes[NUMBER_OF_PIPES];
     int pipe_count = NUMBER_OF_PIPES;
-    // Fan pins, in pipe order. All four are hardware PWM on the Arduino Nano
-    // (and on the Nano Every), so every fan can ramp.
-    int pins[NUMBER_OF_PIPES] = {10,9,6,5};
+    // Fan pins, in pipe order: driver board channels 1-4 (J11-J14). All four
+    // are hardware PWM on the Arduino Nano (and on the Nano Every), so every
+    // fan can ramp. Spare channels 5 and 6 are D10 and D11.
+    int pins[NUMBER_OF_PIPES] = {3,5,6,9};
 
     int phrase_count = NUMBER_OF_PHRASES;
     int note_count = NUMBER_OF_NOTES;
