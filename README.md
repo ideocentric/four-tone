@@ -59,7 +59,7 @@ four-tone/
 │   ├── art/              Silkscreen logo source
 │   └── datasheets/       Reference datasheets
 ├── mechanical/           FreeCAD models for the head joint and fan caddy
-├── tools/                pipe_length.py, the tuning calculator
+├── tools/                Tuning calculator; head joint rev 03 generator
 └── docs/                 Build and tuning guides, images
 ```
 

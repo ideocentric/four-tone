@@ -19,7 +19,8 @@ pipe above it is the resonator.
 
 | Part      | Source                          | Notes |
 | --------- | ------------------------------- | ----- |
-| Head joint | `cad/fan_organ_pipe_rev_02.FCStd` | Windway, window and labium; the pipe plugs into its socket. Tested with 2" PVC. |
+| Head joint, rev 02 | `cad/fan_organ_pipe_rev_02.FCStd` | Windway, window and labium; the pipe plugs into its socket. Tested with 2" PVC. Solid block. |
+| Head joint, rev 03 | `cad/fan_organ_pipe_rev_03.FCStd` | Rev 02 with the block hollowed (3 mm minimum walls), for resin and MJF printing. Not yet printed or tested. |
 | Fan caddy | `cad/fan_mount_rev-01.FCStd`    | Holds the fan and ducts its outlet into the head joint's airway inlet. |
 | Pipe      | 2" PVC, cut to length           | Same stock for all four voices; length sets pitch. See the [tuning guide](../docs/tuning.md). |
 | Fan       | 5015 blower, 12 V (see [`../hardware/parts.md`](../hardware/parts.md)) | 50 x 50 x 15 mm, 19.5 mm outlet, 2-pin JST XH-style plug. |
@@ -37,6 +38,31 @@ sketch constraints; the roles are inferred from the constraint names.
 | `airwayinletd`   | 10.25 mm narrowing to 6.0 mm | Airway inlet from the caddy |
 | `airwayrectx` x `airwayrecty` | 1.5 x 30.0 mm | Windway (flue) slot |
 | `windowy`        | 32.03 mm  | Window / labium opening |
+
+### Head joint rev 03 (`fan_organ_pipe_rev_03`)
+
+Rev 02 with a cavity cut out of its solid block, to cut the material and weight of
+resin and MJF prints. Everything from z 52 mm up (window, labium, bore and pipe
+socket) and the outside shape are identical to rev 02, so it should voice the same;
+that is untested.
+
+| Feature | Value |
+| ------- | ----- |
+| Volume | 220.7 cm³, 24% less than rev 02's 289.7 cm³ |
+| Minimum material | 3.0 mm everywhere between the cavity and any open space: outer wall, base, roof, and around the airway |
+| Cavity roof | 45° cone, apex 3 mm below the top of the block, so FDM needs no support inside |
+| Drain holes | 2 x 4 mm through the base at (15, ±10) mm, opposite the airway, so an SLA print does not trap resin. They can be plugged after printing. |
+
+The cone roof is why the saving is 24% rather than most of the block's 174 cm³.
+A flat roof at the same height would remove an estimated 1.5 to 1.8 times as much
+material, but its underside cannot print without support trapped inside the
+cavity.
+
+The file is generated, not hand-modelled: `tools/hollow_head_joint.py` builds it
+from rev 02 as saved and checks the wall thicknesses. It contains rev 02's solid
+(`Rev02Solid`), the cavity (`Cavity`), and the result (`HeadJoint`, a Part Cut).
+To change the wall thickness or drain holes, edit the script and run it with
+FreeCAD's `freecadcmd`.
 
 ### Fan caddy (`fan_mount_rev-01`)
 
@@ -56,26 +82,28 @@ joint stands on its caddy end, pipe socket up):
 
 | File | Part | Volume | Size | Triangles |
 | ---- | ---- | ------ | ---- | --------- |
-| `stl/head-joint_rev-02.stl` | Head joint | 289.5 cm³ | 67 x 67 x 150 mm | 4,660 |
+| `stl/head-joint_rev-02.stl` | Head joint, solid | 289.5 cm³ | 67 x 67 x 150 mm | 4,660 |
+| `stl/head-joint_rev-03.stl` | Head joint, hollowed | 220.6 cm³ | 67 x 67 x 150 mm | 10,206 |
 | `stl/fan-caddy_rev-01.stl` | Fan caddy | 8.3 cm³ | 53 x 19.5 x 82 mm | 47,400 |
 
-Both were exported from the saved FreeCAD geometry without recomputing (see the
+All were exported from the saved FreeCAD geometry without recomputing (see the
 version note below), and checked as closed, manifold meshes with outward normals
 and no self-intersections. Sampled against the CAD surfaces, the largest
-deviation is 0.040 mm on the head joint and 0.034 mm on the caddy. The head joint
+deviation on outside and voicing surfaces is 0.040 mm on both head joints and
+0.034 mm on the caddy. Rev 03's internal cavity cone deviates by up to about
+0.12 mm; the facets sit inside the cavity, so they only make the walls thicker. The head joint
 uses FreeCAD's standard mesher (0.05 mm linear, 0.20 rad angular deflection);
 the caddy uses Netgen at its very fine setting, because the standard mesher left
 small self-intersections in its funnel.
 
 Print services such as JLC3DP quote directly from these files; select millimetres
-when uploading. The head joint is solid, so a resin or MJF print uses the full
-289.5 cm³, whereas an FDM print with partial infill uses less plastic. About 60%
-of that volume (174 cm³) is the bottom 50 mm, which is solid apart from the
-airway, like a recorder's block. Hollowing that section, while keeping walls
-around the airway, is the most effective way to cut the cost of a resin or MJF
-print.
+when uploading. Head joint rev 02 is solid, so a resin or MJF print uses the full 289.5 cm³,
+whereas an FDM print with partial infill uses less plastic. About 60% of that
+volume (174 cm³) is the bottom 50 mm, which is solid apart from the airway, like a
+recorder's block. Rev 03 hollows that section and is the one to quote for resin or
+MJF. For FDM, either revision works; infill already hollows rev 02.
 
-JLC3DP instant quotes for the head joint, 2026-09-15, per unit before shipping:
+JLC3DP instant quotes for head joint rev 02, 2026-09-15, per unit before shipping:
 
 | Material | Price |
 | -------- | ----- |
