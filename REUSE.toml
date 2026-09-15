@@ -1,0 +1,34 @@
+# Machine-readable licensing for every file in the repo.
+# Spec: https://reuse.software/spec-3.3/  Check with: reuse lint
+# When several annotations match a file, the last one wins.
+
+version = 1
+SPDX-PackageName = "four-tone"
+SPDX-PackageSupplier = "Matt Comeione"
+
+# Design: documentation, mechanical models, repo metadata
+[[annotations]]
+path = ["**"]
+SPDX-FileCopyrightText = "2024-2026 Matt Comeione"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+# Firmware
+[[annotations]]
+path = ["firmware/**", "platformio.ini"]
+SPDX-FileCopyrightText = "2024-2026 Matt Comeione"
+SPDX-License-Identifier = "GPL-3.0-or-later"
+
+# Hardware
+[[annotations]]
+path = ["hardware/**"]
+SPDX-FileCopyrightText = "2026 Matt Comeione"
+SPDX-License-Identifier = "CERN-OHL-S-2.0"
+
+# Third party: Arduino's Nano pinout, redistributed under its own license.
+# "override" because reuse otherwise reads stray © bytes in the PDF stream
+# as copyright notices.
+[[annotations]]
+path = ["hardware/datasheets/Pinout-NANO_latest.pdf"]
+precedence = "override"
+SPDX-FileCopyrightText = "2021 Arduino SA"
+SPDX-License-Identifier = "CC-BY-SA-4.0"

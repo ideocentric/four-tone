@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2024-2026 Matt Comeione
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 #include <Arduino.h>
 #include "pipe.h"
 

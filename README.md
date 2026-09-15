@@ -37,3 +37,9 @@ four-tone/
    run configurations (Build, Upload, Monitor).
 
 See `firmware/README.md` for converting the `.ino` sketch.
+
+## License
+
+Copyleft throughout: firmware under GPL-3.0-or-later, hardware under
+CERN-OHL-S-2.0, and mechanical design and documentation under CC-BY-SA-4.0.
+See [LICENSE.md](LICENSE.md) for details.
