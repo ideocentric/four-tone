@@ -24,7 +24,7 @@ The 24 V output is unused.
 | 4 | Fan caddy | `../mechanical/cad/fan_mount_rev-01.FCStd` |
 | 4 | 2" PVC pipe, cut to pitch | Same stock for all four; length TBD per note |
 | 1 | Open-bottom wooden enclosure | `../mechanical/enclosure/` |
-| 1 | Six fan driver PCB, rev A | `pcb/four-tone-driver.kicad_pcb` (schematic and routed layout done, fabrication files not yet generated) |
+| 1 | Six fan driver PCB, rev A | `pcb/four-tone-driver.kicad_pcb` (fabrication files in `pcb/fabrication/rev-a/`) |
 
 ## Six fan driver, rev A
 
