@@ -116,6 +116,13 @@ repair mesh**.
 Print material, layer height, infill, orientation and supports: TBD. Record the
 settings that worked in `slicer/` as a slicer project, or here.
 
+## A wooden version
+
+The head joint can also be built in wood, the way a wooden organ pipe is: four
+boards and a block, with the windway formed as a gap rather than a cut slot. A
+dimensioned concept drawing and a package for getting it quoted are in the
+[wooden head joint guide](../docs/wood-head-joint.md). It has not been built.
+
 ## Assembly
 
 The full build, including the electronics, is in the
