@@ -100,8 +100,10 @@ Print services such as JLC3DP quote directly from these files; select millimetre
 when uploading. Head joint rev 02 is solid, so a resin or MJF print uses the full 289.5 cm³,
 whereas an FDM print with partial infill uses less plastic. About 60% of that
 volume (174 cm³) is the bottom 50 mm, which is solid apart from the airway, like a
-recorder's block. Rev 03 hollows that section and is the one to quote for resin or
-MJF. For FDM, either revision works; infill already hollows rev 02.
+recorder's block. Rev 03 hollows that section and is the one to order for resin or MJF: on JLC3DP it
+lands at $32.65 against rev 02's $41.19. See the
+[print sourcing guide](../docs/print-sourcing.md). For FDM either revision works;
+infill already hollows rev 02.
 
 Where to have them printed, what the options cost once tariffs and shipping are
 counted, and the quotes gathered so far are in the

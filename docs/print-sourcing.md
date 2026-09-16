@@ -16,8 +16,8 @@ have changed repeatedly through 2026. Re-quote and re-check before ordering.
 | Fan caddy | `mechanical/stl/fan-caddy_rev-01.stl` | 8.3 cm³ | negligible |
 
 Four voices need four head joints and four caddies. Quote **rev 03** for resin or
-MJF: it is 24% less material for the same voicing geometry. For FDM either
-revision works, because infill already hollows rev 02.
+MJF: 24% less material, and on JLC3DP that is 24% off the print price too. For FDM
+either revision works, because infill already hollows rev 02.
 
 Upload the STL in **millimetres**.
 
@@ -25,9 +25,10 @@ Upload the STL in **millimetres**.
 
 | Source | Process | Price per head joint | Notes |
 | ------ | ------- | -------------------- | ----- |
-| JLC3DP (China) | SLA, 9600 resin | $26.35 print, **$41.19 landed** | Quoted for rev 02. Landed total covers build, the 40% tariff and shipping. |
+| JLC3DP (China) | SLA, 9600 resin, rev 02 | $26.35 print, **$41.19 landed** | Landed total covers build, the 40% tariff and shipping. |
+| JLC3DP (China) | SLA, 9600 resin, rev 03 | $20.06 print, **$32.65 landed** | 24% less material, and $8.54 per part cheaper landed. |
 | JLC3DP (China) | SLA, Imagine Black | $78.20 | Was cheaper in the past; the price rose substantially. |
-| JawsTec (US) | SLA, basic resin | over $200 | Roughly eight times JLC3DP's 9600 price. |
+| JawsTec (US) | SLA, basic resin | over $200 | About ten times JLC3DP's rev 03 print price, with no tariff to pay. |
 | Xometry, Protolabs, Craftcloud | SLA | not yet quoted | All quote instantly from an uploaded STL. |
 
 Craftcloud is a marketplace rather than a printer, so the shop's country decides
@@ -61,20 +62,25 @@ breaks down as $26.35 for the print, $10.54 of tariff at 40%, and about $4.30 of
 shipping. The tariff, not shipping, is the significant add-on: shipping is modest
 even though the part is heavy.
 
-Rev 03 has not been quoted. If JLC3DP prices mainly by volume, its 24% saving
-would put the print near $20 and the landed price near $33, but that is an
-extrapolation, not a quote.
+Hollowing pays off: rev 03 lands at **$32.65** ($20.06 print, $8.02 tariff,
+$4.57 shipping), **$8.54 less than rev 02** and about $34 less across four voices.
+JLC3DP's SLA price tracks material closely here, since 24% less resin gave 24% off
+the print price.
+
+Order **rev 03** from JLC3DP. It is also 75 cm³ and roughly 80 g lighter per part,
+which helps again wherever shipping is charged by weight.
 
 | Route | Landed per head joint | Four head joints |
 | ----- | --------------------- | ---------------- |
+| JLC3DP, 9600 resin, rev 03 | **$32.65** (measured) | about $125 |
 | JLC3DP, 9600 resin, rev 02 | **$41.19** (measured) | about $165 |
 | US shop (JawsTec) | over $200 | over $800 |
-| Mexican shop, USMCA certified | its quote + shipping and brokerage | needs to beat about $41 each |
-| Mexican shop, not certified | its quote + 15.3% + shipping and brokerage | needs to beat about $36 each before duty |
+| Mexican shop, USMCA certified | its quote + shipping and brokerage | needs to beat about $33 each |
+| Mexican shop, not certified | its quote + 15.3% + shipping and brokerage | needs to beat about $28 each before duty |
 
-**JLC3DP is the clear winner at present**, roughly five times cheaper per part
+**JLC3DP is the clear winner at present**, roughly six times cheaper per part
 than the US quote obtained, even with the 40% tariff paid. A domestic or Mexican
-shop only becomes interesting if it quotes near $41 per head joint delivered, or
+shop only becomes interesting if it quotes near $33 per head joint delivered, or
 if tariffs rise further. Shipping four parts at once spreads the shipping cost, so
 the per-part landed price of a batch should be a little below $41.19.
 
