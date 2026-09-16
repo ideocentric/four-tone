@@ -25,7 +25,7 @@ covers the four pipes and channel 5. It needs `platform = atmelmegaavr` and
 
 | Qty | Part | Source |
 | --- | ---- | ------ |
-| 4 | Head joint | [`../mechanical/cad/fan_organ_pipe_rev_02.FCStd`](../mechanical/README.md), 3D printed. Rev 03 is a hollowed version for resin or MJF printing. |
+| 4 | Head joint | [`../mechanical/cad/fan_organ_pipe_rev_02.FCStd`](../mechanical/README.md), 3D printed. Rev 03 is a hollowed version for resin or MJF printing. See [print sourcing](../docs/print-sourcing.md). |
 | 4 | Fan caddy | [`../mechanical/cad/fan_mount_rev-01.FCStd`](../mechanical/README.md), 3D printed |
 | 4 | Pipe, cut to pitch | See the [tuning guide](../docs/tuning.md) |
 | 1 | Open-bottom wooden enclosure | [`../mechanical/enclosure/`](../mechanical/README.md#enclosure) |

@@ -103,14 +103,9 @@ volume (174 cm³) is the bottom 50 mm, which is solid apart from the airway, lik
 recorder's block. Rev 03 hollows that section and is the one to quote for resin or
 MJF. For FDM, either revision works; infill already hollows rev 02.
 
-JLC3DP instant quotes for head joint rev 02, 2026-09-15, per unit before shipping:
-
-| Material | Price |
-| -------- | ----- |
-| 9600 resin (SLA, matte white) | $26.35 |
-| Imagine Black resin (SLA) | $78.20 |
-
-Prices change; re-quote from the STL before ordering.
+Where to have them printed, what the options cost once tariffs and shipping are
+counted, and the quotes gathered so far are in the
+[print sourcing guide](../docs/print-sourcing.md).
 
 To re-export after changing a model, select its `Body` in FreeCAD and use
 **File > Export**, then check the mesh with **Meshes > Analyze > Evaluate and

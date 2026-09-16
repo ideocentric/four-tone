@@ -42,6 +42,7 @@ flowchart LR
 | ----- | --- |
 | [Build guide](docs/build.md) | Assembly, wiring, and step-by-step power-up checks |
 | [Tuning guide](docs/tuning.md) | Finding pipe lengths for your notes, with a calculator |
+| [Print sourcing](docs/print-sourcing.md) | Where to print the head joints: quotes, tariffs and landed cost |
 | [Firmware](firmware/README.md) | Building, uploading, how the sequence works, changing the music |
 | [Driver board](hardware/pcb/README.md) | Schematic, BOM, circuit and layout notes |
 | [Parts list](hardware/parts.md) | Everything to buy or make |
