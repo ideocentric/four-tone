@@ -56,14 +56,18 @@ if the vendor certifies origin and the shipment claims it.
 landed = unit price x quantity + duty + shipping + brokerage
 ```
 
-A JLC3DP order checked out at **$41.19 landed for one head joint**, which breaks
-down as $26.35 for the print, $10.54 of tariff at 40%, and about $4.30 of
+A JLC3DP order checked out at **$41.19 landed for one rev 02 head joint**, which
+breaks down as $26.35 for the print, $10.54 of tariff at 40%, and about $4.30 of
 shipping. The tariff, not shipping, is the significant add-on: shipping is modest
 even though the part is heavy.
 
+Rev 03 has not been quoted. If JLC3DP prices mainly by volume, its 24% saving
+would put the print near $20 and the landed price near $33, but that is an
+extrapolation, not a quote.
+
 | Route | Landed per head joint | Four head joints |
 | ----- | --------------------- | ---------------- |
-| JLC3DP, 9600 resin | **$41.19** (measured) | about $165 |
+| JLC3DP, 9600 resin, rev 02 | **$41.19** (measured) | about $165 |
 | US shop (JawsTec) | over $200 | over $800 |
 | Mexican shop, USMCA certified | its quote + shipping and brokerage | needs to beat about $41 each |
 | Mexican shop, not certified | its quote + 15.3% + shipping and brokerage | needs to beat about $36 each before duty |
