@@ -11,18 +11,21 @@ face and the front board. Edit the constants below to change it.
 """
 import sys
 
-OUT, WALL = 71.0, 12.0
-IN = OUT - 2 * WALL                     # 47
-H = 150.0
-BLOCK_H = 53.0                          # block top face = windway exit = mouth line
-WW_W, WW_D, WW_L = 30.0, 1.5, 10.0
-CUTUP, WIN_W, LAB = 17.0, 32.0, 19.3
-INLET = 10.25
-CH_W, CH_H, CH_D = 30.0, 15.0, 30.0
-TENON_D, TENON_L = 52.3, 25.0
-MOUTH, LABIUM = BLOCK_H, BLOCK_H + CUTUP
-CH_TOP = BLOCK_H - WW_L                 # 43
-CH_BOT = CH_TOP - CH_H                  # 28
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import wood_head_joint_spec as SP
+
+OUT, WALL, IN = SP.OUT, SP.WALL, SP.IN
+H = SP.BOX_H                              # height of the glued box
+BLOCK_H = SP.BLOCK_H
+WW_W, WW_D, WW_L = SP.WW_W, SP.WW_D, SP.WW_L
+CUTUP, WIN_W, LAB = SP.CUTUP, SP.WIN_W, SP.LAB_ANGLE
+INLET = SP.INLET
+CH_W, CH_H, CH_D = SP.CH_W, SP.CH_H, SP.CH_D
+COLLAR_H, SPIGOT_D, SPIGOT_L, COLLAR_BORE = SP.COLLAR_H, SP.SPIGOT_D, SP.SPIGOT_L, SP.COLLAR_BORE
+MOUTH, LABIUM = SP.MOUTH, SP.LABIUM
+CH_TOP = BLOCK_H - WW_L
+CH_BOT = CH_TOP - CH_H
 S = 3.0
 out = []
 def px(v): return v * S
@@ -46,12 +49,12 @@ def endgroup(): out.append("</g>")
 Z = lambda z: H - z                     # model z (up) to drawing y (down)
 
 # ------------------------------------------------------------------ A section
-group(22, 40, "A  SECTION THROUGH THE CENTRE", "assembled; the mouth faces left. Hatched = wood, white = air.")
-poly([((OUT - TENON_D) / 2, 0), (OUT - (OUT - TENON_D) / 2, 0),
-      (OUT - (OUT - TENON_D) / 2, Z(H - TENON_L)), ((OUT - TENON_D) / 2, Z(H - TENON_L))], "part")
-rect(0, Z(H - TENON_L), WALL, H - TENON_L)                    # front board
-rect(OUT - WALL, Z(H - TENON_L), WALL, H - TENON_L)           # back board
-rect(WALL, Z(H - TENON_L), IN, H - TENON_L - BLOCK_H, "void")  # bore above the block
+group(42, 106, "", "")
+text(0, -58, "A  SECTION THROUGH THE CENTRE", "title")
+text(0, -53, "assembled; the mouth faces left. Shaded = wood, white = air.", "sub")
+rect(0, Z(H), WALL, H)                                         # front board
+rect(OUT - WALL, Z(H), WALL, H)                                # back board
+rect(WALL, Z(H), IN, H - BLOCK_H, "void")                      # interior above the block
 rect(WALL + WW_D, Z(BLOCK_H), IN - WW_D, BLOCK_H)              # block
 rect(WALL, Z(MOUTH), WW_D, WW_L, "void")                       # windway gap
 rect(WALL + WW_D, Z(CH_TOP), CH_D, CH_H, "void")               # wind chamber
@@ -59,25 +62,34 @@ BX = WALL + WW_D + (IN - WW_D) / 2 - INLET / 2
 rect(BX, Z(CH_BOT), INLET, CH_BOT, "void")                     # inlet bore
 rect(0, Z(LABIUM), WALL, CUTUP, "void")                        # window
 line(WALL, Z(LABIUM), 0, Z(LABIUM) - 4.2, "thin")              # labium bevel
-line(0, Z(H - TENON_L), OUT, Z(H - TENON_L), "hidden")
-for y, s in ((6, f"tenon turned round ø{TENON_D:g} x {TENON_L:g};"), (10, "the PVC pipe slides over it"),
-             (14, "(only the top 30 mm is turned)")): text(OUT + 4, y, s)
-text(OUT + 4, Z(LABIUM) - 1.5, f"labium: {LAB:g}° bevel, {WIN_W:g} mm wide")
+# collar and spigot, drawn above the box
+CT = -COLLAR_H
+rect(0, CT, OUT, COLLAR_H)                                     # collar body
+rect((OUT - COLLAR_BORE) / 2, CT, COLLAR_BORE, COLLAR_H, "void")
+rect((OUT - SPIGOT_D) / 2, CT - SPIGOT_L, SPIGOT_D, SPIGOT_L)  # spigot
+rect((OUT - COLLAR_BORE) / 2, CT - SPIGOT_L, COLLAR_BORE, SPIGOT_L, "void")
+line(0, CT, OUT, CT, "thin")
+text(OUT + 4, CT - SPIGOT_L + 6, f"spigot \u00f8{SPIGOT_D:g} x {SPIGOT_L:g}, turned on the collar;")
+text(OUT + 4, CT - SPIGOT_L + 10, "the PVC pipe slides over it and rests")
+text(OUT + 4, CT - SPIGOT_L + 14, "on the collar shoulder")
+text(OUT + 4, CT + COLLAR_H / 2, f"collar {OUT:g} x {OUT:g} x {COLLAR_H:g}, bore \u00f8{COLLAR_BORE:g}")
+text(OUT + 4, Z(LABIUM) - 1.5, f"labium: {LAB:g}\u00b0 bevel, {WIN_W:g} mm wide")
 text(OUT + 4, Z(MOUTH) - 1.5, "mouth line = top face of the block")
 text(OUT + 4, Z(MOUTH) + 6, f"windway: {WW_W:g} mm wide x {WW_D:g} mm gap,")
 text(OUT + 4, Z(MOUTH) + 10, f"{WW_L:g} mm long, formed by the gap between")
 text(OUT + 4, Z(MOUTH) + 14, "the block face and the front board")
 text(OUT + 4, Z(CH_TOP) + 9, f"wind chamber {CH_W:g} x {CH_H:g} x {CH_D:g} deep")
-text(OUT + 4, Z(0) - 5, f"ø{INLET:g} inlet bore, fan caddy nozzle")
-dim_v(0, H, -10, f"{H:g}")
-dim_v(Z(BLOCK_H), H, -4.5, f"{BLOCK_H:g}")
-dim_v(Z(LABIUM), Z(MOUTH), OUT + 1.5, f"cut-up {CUTUP:g}", "right")
+text(OUT + 4, Z(0) - 5, f"\u00f8{INLET:g} inlet bore, fan caddy nozzle")
+dim_v(CT - SPIGOT_L, H, -10, f"{H + COLLAR_H + SPIGOT_L:g} overall")
+dim_v(CT, H, -4.5, f"{H + COLLAR_H:g} to the shoulder")
+dim_v(Z(BLOCK_H), H, OUT + 1.5, f"{BLOCK_H:g}", "right")
+dim_v(Z(LABIUM), Z(MOUTH), OUT + 8, f"cut-up {CUTUP:g}", "right")
 dim_h(0, OUT, H + 8, f"{OUT:g}")
 dim_h(WALL, OUT - WALL, H + 15, f"{IN:g} inside")
 endgroup()
 
 # ------------------------------------------------------------- B front board
-group(192, 40, "B  FRONT BOARD", f"{OUT:g} x {H:g} x {WALL:g}, one off, dense hardwood")
+group(192, 106, "B  FRONT BOARD", f"{OUT:g} x {H:g} x {WALL:g}, one off, dense hardwood")
 rect(0, 0, OUT, H)
 rect((OUT - WIN_W) / 2, Z(LABIUM), WIN_W, CUTUP, "void")
 dim_h((OUT - WIN_W) / 2, (OUT + WIN_W) / 2, Z(LABIUM) - 5, f"{WIN_W:g}")
@@ -91,14 +103,14 @@ text(0, H + 24, "is the labium and must stay crisp.")
 endgroup()
 
 # -------------------------------------------------------------- C back board
-group(288, 40, "C  BACK BOARD", f"{OUT:g} x {H:g} x {WALL:g}, one off")
+group(288, 106, "C  BACK BOARD", f"{OUT:g} x {H:g} x {WALL:g}, one off")
 rect(0, 0, OUT, H)
 dim_h(0, OUT, H + 8, f"{OUT:g}")
 dim_v(0, H, -6, f"{H:g}")
 endgroup()
 
 # ------------------------------------------------------------- D side boards
-group(374, 40, "D  SIDE BOARDS", f"{IN:g} x {H:g} x {WALL:g}, two off")
+group(374, 106, "D  SIDE BOARDS", f"{IN:g} x {H:g} x {WALL:g}, two off")
 rect(0, 0, IN, H)
 text(IN / 2, H / 2, "2 off", "note", "middle")
 dim_h(0, IN, H + 8, f"{IN:g}")
@@ -123,7 +135,7 @@ text(0, BLOCK_H + 21, f"face, open at the top. Wind chamber pocket {CH_W:g} x {C
 text(0, BLOCK_H + 25, f"below it. ø{INLET:g} bore from the bottom face into the chamber.")
 endgroup()
 
-group(150, 268, "", f"block, side face. Windway and chamber are cut into the left face.")
+group(150, 268, "", "block, side face")
 rect(0, 0, IN, BLOCK_H)
 rect(0, 0, WW_D, WW_L, "void")
 rect(0, WW_L, CH_D, CH_H, "void")
@@ -132,25 +144,44 @@ dim_h(0, IN, BLOCK_H + 8, f"{IN:g}")
 dim_v(0, WW_L, IN + 4, f"{WW_L:g}", "right")
 endgroup()
 
+# ------------------------------------------------------------------- G collar
+group(238, 268, "G  COLLAR", f"{OUT:g} x {OUT:g} x {COLLAR_H:g} plus a turned spigot, one off, hardwood")
+rect(0, SPIGOT_L, OUT, COLLAR_H)
+rect((OUT - SPIGOT_D) / 2, 0, SPIGOT_D, SPIGOT_L)
+rect((OUT - COLLAR_BORE) / 2, 0, COLLAR_BORE, COLLAR_H + SPIGOT_L, "void")
+text(OUT + 3, SPIGOT_L / 2, f"spigot \u00f8{SPIGOT_D:g} x {SPIGOT_L:g}, turned")
+text(OUT + 3, SPIGOT_L + COLLAR_H / 2, f"bore \u00f8{COLLAR_BORE:g} through")
+dim_h((OUT - SPIGOT_D) / 2, (OUT + SPIGOT_D) / 2, -5, f"\u00f8{SPIGOT_D:g}")
+dim_h(0, OUT, COLLAR_H + SPIGOT_L + 8, f"{OUT:g}")
+dim_v(0, SPIGOT_L, -5, f"{SPIGOT_L:g}")
+dim_v(SPIGOT_L, SPIGOT_L + COLLAR_H, -5, f"{COLLAR_H:g}")
+text(0, COLLAR_H + SPIGOT_L + 17, "The spigot cannot be turned on the glued box:")
+text(0, COLLAR_H + SPIGOT_L + 21, f"at \u00f8{SPIGOT_D:g} the cut would break through the")
+text(0, COLLAR_H + SPIGOT_L + 25, "corners of the 47 mm square interior. Turning")
+text(0, COLLAR_H + SPIGOT_L + 29, "this one small piece instead avoids that.")
+endgroup()
+
 # ----------------------------------------------------------------- F assembly
-group(288, 262, "F  ASSEMBLY", "")
+group(360, 268, "F  ASSEMBLY", "")
 for i, n in enumerate([
-    "1. Cut the four boards and the block to size.",
+    "1. Cut the four boards, the block and the collar blank.",
     "2. Front board: cut the window, then bevel its top edge",
-    f"   at {LAB:g}° on the inside face to form the labium.",
+    f"   at {LAB:g}\u00b0 on the inside face to form the labium.",
     "3. Block: bore the inlet, cut the wind chamber pocket,",
     f"   then the {WW_D:g} mm windway rabbet across the front face.",
-    "4. Glue the block between the two side boards, flush at",
+    f"4. Collar: bore \u00f8{COLLAR_BORE:g} through, then turn the",
+    f"   \u00f8{SPIGOT_D:g} x {SPIGOT_L:g} spigot on one face.",
+    "5. Glue the block between the two side boards, flush at",
     "   the bottom ends, block front face toward the mouth.",
-    "5. Glue on the front and back boards. The gap between the",
+    "6. Glue on the front and back boards. The gap between the",
     "   block face and the front board is the windway.",
-    f"6. Turn the top {TENON_L + 5:g} mm round: tenon ø{TENON_D:g} x {TENON_L:g} long.",
-    "   The window is 55 mm below, so the cut is continuous.",
-    "7. Seal the inside with shellac. Keep it out of the windway.",
+    "7. Glue the collar on top, bore concentric with the",
+    "   interior.",
+    "8. Seal the inside with shellac. Keep it out of the windway.",
     "",
-    "The PVC pipe slides over the tenon and rests on the",
-    "shoulder, so the pipe's weight is carried in compression,",
-    "not by a socket in bending.",
+    "The PVC pipe slides over the spigot and rests on the",
+    "collar shoulder, so the pipe's weight is carried in",
+    "compression, not by a socket in bending.",
     "",
     "Wood movement changes the windway gap, so use quartersawn",
     "stock or void-free ply, and seal it.",
@@ -175,7 +206,7 @@ svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W_PX}" height="{H_PX}"
 </style>
 <rect width="{W_PX}" height="{H_PX}" fill="#ffffff"/>
 <text x="60" y="42" style="font-size:20px;font-weight:bold">four-tone: wooden head joint, concept for quoting</text>
-<text x="60" y="62" style="font-size:11px;fill:#444">Five pieces glued up, then the top turned. Built like a wooden organ pipe: the windway is the gap between the block and the front board. All dimensions in mm.</text>
+<text x="60" y="62" style="font-size:11px;fill:#444">Six pieces: four boards and a block glued up, plus a turned collar. Built like a wooden organ pipe: the windway is the gap between the block and the front board. All dimensions in mm.</text>
 {chr(10).join(out)}
 <text x="60" y="{H_PX-50}" style="font-size:10px;fill:#444">Critical for voicing, carried over from the tested printed head joint: windway {WW_W:g} x {WW_D:g} mm and {WW_L:g} mm long, cut-up {CUTUP:g} mm, labium {LAB:g}° and {WIN_W:g} mm wide, inlet ø{INLET:g} mm. Other dimensions may suit stock and tooling.</text>
 <text x="60" y="{H_PX-34}" style="font-size:10px;fill:#444">Material: quartersawn hardwood or void-free Baltic birch ply, {WALL:g} mm; front board and block in dense hardwood (maple, cherry or pear). This design has not been built or voiced.</text>

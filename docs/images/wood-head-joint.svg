@@ -14,107 +14,115 @@
 </style>
 <rect width="1700" height="1180" fill="#ffffff"/>
 <text x="60" y="42" style="font-size:20px;font-weight:bold">four-tone: wooden head joint, concept for quoting</text>
-<text x="60" y="62" style="font-size:11px;fill:#444">Five pieces glued up, then the top turned. Built like a wooden organ pipe: the windway is the gap between the block and the front board. All dimensions in mm.</text>
-<g transform="translate(66.0,120.0)">
-<text x="0.0" y="-21.0" class="title" text-anchor="start">A  SECTION THROUGH THE CENTRE</text>
-<text x="0.0" y="-7.5" class="sub" text-anchor="start">assembled; the mouth faces left. Hatched = wood, white = air.</text>
-<polygon points="28.1,0.0 184.9,0.0 184.9,75.0 28.1,75.0" class="part"/>
-<rect x="0.0" y="75.0" width="36.0" height="375.0" class="part"/>
-<rect x="177.0" y="75.0" width="36.0" height="375.0" class="part"/>
-<rect x="36.0" y="75.0" width="141.0" height="216.0" class="void"/>
-<rect x="40.5" y="291.0" width="136.5" height="159.0" class="part"/>
-<rect x="36.0" y="291.0" width="4.5" height="30.0" class="void"/>
-<rect x="40.5" y="321.0" width="90.0" height="45.0" class="void"/>
-<rect x="93.4" y="366.0" width="30.8" height="84.0" class="void"/>
-<rect x="0.0" y="240.0" width="36.0" height="51.0" class="void"/>
-<line x1="36.0" y1="240.0" x2="0.0" y2="227.4" class="thin"/>
-<line x1="0.0" y1="75.0" x2="213.0" y2="75.0" class="hidden"/>
-<text x="225.0" y="18.0" class="note" text-anchor="start">tenon turned round ø52.3 x 25;</text>
-<text x="225.0" y="30.0" class="note" text-anchor="start">the PVC pipe slides over it</text>
-<text x="225.0" y="42.0" class="note" text-anchor="start">(only the top 30 mm is turned)</text>
-<text x="225.0" y="235.5" class="note" text-anchor="start">labium: 19.3° bevel, 32 mm wide</text>
-<text x="225.0" y="286.5" class="note" text-anchor="start">mouth line = top face of the block</text>
-<text x="225.0" y="309.0" class="note" text-anchor="start">windway: 30 mm wide x 1.5 mm gap,</text>
-<text x="225.0" y="321.0" class="note" text-anchor="start">10 mm long, formed by the gap between</text>
-<text x="225.0" y="333.0" class="note" text-anchor="start">the block face and the front board</text>
-<text x="225.0" y="348.0" class="note" text-anchor="start">wind chamber 30 x 15 x 30 deep</text>
-<text x="225.0" y="435.0" class="note" text-anchor="start">ø10.25 inlet bore, fan caddy nozzle</text>
-<line x1="-30.0" y1="0.0" x2="-30.0" y2="450.0" class="dim"/>
-<polygon points="-30.0,0.0 -33.0,6.0 -27.0,6.0" class="arrow"/>
-<polygon points="-30.0,450.0 -33.0,444.0 -27.0,444.0" class="arrow"/>
-<text x="-34.2" y="228.3" class="dimtext" text-anchor="end">150</text>
-<line x1="-13.5" y1="291.0" x2="-13.5" y2="450.0" class="dim"/>
-<polygon points="-13.5,291.0 -16.5,297.0 -10.5,297.0" class="arrow"/>
-<polygon points="-13.5,450.0 -16.5,444.0 -10.5,444.0" class="arrow"/>
-<text x="-17.7" y="373.8" class="dimtext" text-anchor="end">53</text>
-<line x1="217.5" y1="240.0" x2="217.5" y2="291.0" class="dim"/>
-<polygon points="217.5,240.0 214.5,246.0 220.5,246.0" class="arrow"/>
-<polygon points="217.5,291.0 214.5,285.0 220.5,285.0" class="arrow"/>
-<text x="221.7" y="268.8" class="dimtext" text-anchor="start">cut-up 17</text>
-<line x1="0.0" y1="474.0" x2="213.0" y2="474.0" class="dim"/>
-<polygon points="0.0,474.0 6.0,471.0 6.0,477.0" class="arrow"/>
-<polygon points="213.0,474.0 207.0,471.0 207.0,477.0" class="arrow"/>
-<text x="106.5" y="469.8" class="dimtext" text-anchor="middle">71</text>
-<line x1="36.0" y1="495.0" x2="177.0" y2="495.0" class="dim"/>
-<polygon points="36.0,495.0 42.0,492.0 42.0,498.0" class="arrow"/>
-<polygon points="177.0,495.0 171.0,492.0 171.0,498.0" class="arrow"/>
-<text x="106.5" y="490.8" class="dimtext" text-anchor="middle">47 inside</text>
+<text x="60" y="62" style="font-size:11px;fill:#444">Six pieces: four boards and a block glued up, plus a turned collar. Built like a wooden organ pipe: the windway is the gap between the block and the front board. All dimensions in mm.</text>
+<g transform="translate(126.0,318.0)">
+<text x="0.0" y="-174.0" class="title" text-anchor="start">A  SECTION THROUGH THE CENTRE</text>
+<text x="0.0" y="-159.0" class="sub" text-anchor="start">assembled; the mouth faces left. Shaded = wood, white = air.</text>
+<rect x="0.0" y="0.0" width="36.0" height="375.0" class="part"/>
+<rect x="177.0" y="0.0" width="36.0" height="375.0" class="part"/>
+<rect x="36.0" y="0.0" width="141.0" height="216.0" class="void"/>
+<rect x="40.5" y="216.0" width="136.5" height="159.0" class="part"/>
+<rect x="36.0" y="216.0" width="4.5" height="30.0" class="void"/>
+<rect x="40.5" y="246.0" width="90.0" height="45.0" class="void"/>
+<rect x="93.4" y="291.0" width="30.8" height="84.0" class="void"/>
+<rect x="0.0" y="165.0" width="36.0" height="51.0" class="void"/>
+<line x1="36.0" y1="165.0" x2="0.0" y2="152.4" class="thin"/>
+<rect x="0.0" y="-75.0" width="213.0" height="75.0" class="part"/>
+<rect x="36.0" y="-75.0" width="141.0" height="75.0" class="void"/>
+<rect x="28.1" y="-150.0" width="156.9" height="75.0" class="part"/>
+<rect x="36.0" y="-150.0" width="141.0" height="75.0" class="void"/>
+<line x1="0.0" y1="-75.0" x2="213.0" y2="-75.0" class="thin"/>
+<text x="225.0" y="-132.0" class="note" text-anchor="start">spigot ø52.3 x 25, turned on the collar;</text>
+<text x="225.0" y="-120.0" class="note" text-anchor="start">the PVC pipe slides over it and rests</text>
+<text x="225.0" y="-108.0" class="note" text-anchor="start">on the collar shoulder</text>
+<text x="225.0" y="-37.5" class="note" text-anchor="start">collar 71 x 71 x 25, bore ø47</text>
+<text x="225.0" y="160.5" class="note" text-anchor="start">labium: 19.3° bevel, 32 mm wide</text>
+<text x="225.0" y="211.5" class="note" text-anchor="start">mouth line = top face of the block</text>
+<text x="225.0" y="234.0" class="note" text-anchor="start">windway: 30 mm wide x 1.5 mm gap,</text>
+<text x="225.0" y="246.0" class="note" text-anchor="start">10 mm long, formed by the gap between</text>
+<text x="225.0" y="258.0" class="note" text-anchor="start">the block face and the front board</text>
+<text x="225.0" y="273.0" class="note" text-anchor="start">wind chamber 30 x 15 x 30 deep</text>
+<text x="225.0" y="360.0" class="note" text-anchor="start">ø10.25 inlet bore, fan caddy nozzle</text>
+<line x1="-30.0" y1="-150.0" x2="-30.0" y2="375.0" class="dim"/>
+<polygon points="-30.0,-150.0 -33.0,-144.0 -27.0,-144.0" class="arrow"/>
+<polygon points="-30.0,375.0 -33.0,369.0 -27.0,369.0" class="arrow"/>
+<text x="-34.2" y="115.8" class="dimtext" text-anchor="end">175 overall</text>
+<line x1="-13.5" y1="-75.0" x2="-13.5" y2="375.0" class="dim"/>
+<polygon points="-13.5,-75.0 -16.5,-69.0 -10.5,-69.0" class="arrow"/>
+<polygon points="-13.5,375.0 -16.5,369.0 -10.5,369.0" class="arrow"/>
+<text x="-17.7" y="153.3" class="dimtext" text-anchor="end">150 to the shoulder</text>
+<line x1="217.5" y1="216.0" x2="217.5" y2="375.0" class="dim"/>
+<polygon points="217.5,216.0 214.5,222.0 220.5,222.0" class="arrow"/>
+<polygon points="217.5,375.0 214.5,369.0 220.5,369.0" class="arrow"/>
+<text x="221.7" y="298.8" class="dimtext" text-anchor="start">53</text>
+<line x1="237.0" y1="165.0" x2="237.0" y2="216.0" class="dim"/>
+<polygon points="237.0,165.0 234.0,171.0 240.0,171.0" class="arrow"/>
+<polygon points="237.0,216.0 234.0,210.0 240.0,210.0" class="arrow"/>
+<text x="241.2" y="193.8" class="dimtext" text-anchor="start">cut-up 17</text>
+<line x1="0.0" y1="399.0" x2="213.0" y2="399.0" class="dim"/>
+<polygon points="0.0,399.0 6.0,396.0 6.0,402.0" class="arrow"/>
+<polygon points="213.0,399.0 207.0,396.0 207.0,402.0" class="arrow"/>
+<text x="106.5" y="394.8" class="dimtext" text-anchor="middle">71</text>
+<line x1="36.0" y1="420.0" x2="177.0" y2="420.0" class="dim"/>
+<polygon points="36.0,420.0 42.0,417.0 42.0,423.0" class="arrow"/>
+<polygon points="177.0,420.0 171.0,417.0 171.0,423.0" class="arrow"/>
+<text x="106.5" y="415.8" class="dimtext" text-anchor="middle">47 inside</text>
 </g>
-<g transform="translate(576.0,120.0)">
+<g transform="translate(576.0,318.0)">
 <text x="0.0" y="-21.0" class="title" text-anchor="start">B  FRONT BOARD</text>
-<text x="0.0" y="-7.5" class="sub" text-anchor="start">71 x 150 x 12, one off, dense hardwood</text>
-<rect x="0.0" y="0.0" width="213.0" height="450.0" class="part"/>
-<rect x="58.5" y="240.0" width="96.0" height="51.0" class="void"/>
-<line x1="58.5" y1="225.0" x2="154.5" y2="225.0" class="dim"/>
-<polygon points="58.5,225.0 64.5,222.0 64.5,228.0" class="arrow"/>
-<polygon points="154.5,225.0 148.5,222.0 148.5,228.0" class="arrow"/>
-<text x="106.5" y="220.8" class="dimtext" text-anchor="middle">32</text>
-<line x1="163.5" y1="240.0" x2="163.5" y2="291.0" class="dim"/>
-<polygon points="163.5,240.0 160.5,246.0 166.5,246.0" class="arrow"/>
-<polygon points="163.5,291.0 160.5,285.0 166.5,285.0" class="arrow"/>
-<text x="167.7" y="268.8" class="dimtext" text-anchor="start">17</text>
-<line x1="163.5" y1="291.0" x2="163.5" y2="450.0" class="dim"/>
-<polygon points="163.5,291.0 160.5,297.0 166.5,297.0" class="arrow"/>
-<polygon points="163.5,450.0 160.5,444.0 166.5,444.0" class="arrow"/>
-<text x="167.7" y="373.8" class="dimtext" text-anchor="start">53</text>
-<line x1="0.0" y1="474.0" x2="213.0" y2="474.0" class="dim"/>
-<polygon points="0.0,474.0 6.0,471.0 6.0,477.0" class="arrow"/>
-<polygon points="213.0,474.0 207.0,471.0 207.0,477.0" class="arrow"/>
-<text x="106.5" y="469.8" class="dimtext" text-anchor="middle">71</text>
-<line x1="-18.0" y1="0.0" x2="-18.0" y2="450.0" class="dim"/>
+<text x="0.0" y="-7.5" class="sub" text-anchor="start">71 x 125 x 12, one off, dense hardwood</text>
+<rect x="0.0" y="0.0" width="213.0" height="375.0" class="part"/>
+<rect x="58.5" y="165.0" width="96.0" height="51.0" class="void"/>
+<line x1="58.5" y1="150.0" x2="154.5" y2="150.0" class="dim"/>
+<polygon points="58.5,150.0 64.5,147.0 64.5,153.0" class="arrow"/>
+<polygon points="154.5,150.0 148.5,147.0 148.5,153.0" class="arrow"/>
+<text x="106.5" y="145.8" class="dimtext" text-anchor="middle">32</text>
+<line x1="163.5" y1="165.0" x2="163.5" y2="216.0" class="dim"/>
+<polygon points="163.5,165.0 160.5,171.0 166.5,171.0" class="arrow"/>
+<polygon points="163.5,216.0 160.5,210.0 166.5,210.0" class="arrow"/>
+<text x="167.7" y="193.8" class="dimtext" text-anchor="start">17</text>
+<line x1="163.5" y1="216.0" x2="163.5" y2="375.0" class="dim"/>
+<polygon points="163.5,216.0 160.5,222.0 166.5,222.0" class="arrow"/>
+<polygon points="163.5,375.0 160.5,369.0 166.5,369.0" class="arrow"/>
+<text x="167.7" y="298.8" class="dimtext" text-anchor="start">53</text>
+<line x1="0.0" y1="399.0" x2="213.0" y2="399.0" class="dim"/>
+<polygon points="0.0,399.0 6.0,396.0 6.0,402.0" class="arrow"/>
+<polygon points="213.0,399.0 207.0,396.0 207.0,402.0" class="arrow"/>
+<text x="106.5" y="394.8" class="dimtext" text-anchor="middle">71</text>
+<line x1="-18.0" y1="0.0" x2="-18.0" y2="375.0" class="dim"/>
 <polygon points="-18.0,0.0 -21.0,6.0 -15.0,6.0" class="arrow"/>
-<polygon points="-18.0,450.0 -21.0,444.0 -15.0,444.0" class="arrow"/>
-<text x="-22.2" y="228.3" class="dimtext" text-anchor="end">150</text>
-<text x="0.0" y="498.0" class="note" text-anchor="start">Window cut through. Bevel its top edge</text>
-<text x="0.0" y="510.0" class="note" text-anchor="start">at 19.3° on the inside face: that edge</text>
-<text x="0.0" y="522.0" class="note" text-anchor="start">is the labium and must stay crisp.</text>
+<polygon points="-18.0,375.0 -21.0,369.0 -15.0,369.0" class="arrow"/>
+<text x="-22.2" y="190.8" class="dimtext" text-anchor="end">125</text>
+<text x="0.0" y="423.0" class="note" text-anchor="start">Window cut through. Bevel its top edge</text>
+<text x="0.0" y="435.0" class="note" text-anchor="start">at 19.3° on the inside face: that edge</text>
+<text x="0.0" y="447.0" class="note" text-anchor="start">is the labium and must stay crisp.</text>
 </g>
-<g transform="translate(864.0,120.0)">
+<g transform="translate(864.0,318.0)">
 <text x="0.0" y="-21.0" class="title" text-anchor="start">C  BACK BOARD</text>
-<text x="0.0" y="-7.5" class="sub" text-anchor="start">71 x 150 x 12, one off</text>
-<rect x="0.0" y="0.0" width="213.0" height="450.0" class="part"/>
-<line x1="0.0" y1="474.0" x2="213.0" y2="474.0" class="dim"/>
-<polygon points="0.0,474.0 6.0,471.0 6.0,477.0" class="arrow"/>
-<polygon points="213.0,474.0 207.0,471.0 207.0,477.0" class="arrow"/>
-<text x="106.5" y="469.8" class="dimtext" text-anchor="middle">71</text>
-<line x1="-18.0" y1="0.0" x2="-18.0" y2="450.0" class="dim"/>
+<text x="0.0" y="-7.5" class="sub" text-anchor="start">71 x 125 x 12, one off</text>
+<rect x="0.0" y="0.0" width="213.0" height="375.0" class="part"/>
+<line x1="0.0" y1="399.0" x2="213.0" y2="399.0" class="dim"/>
+<polygon points="0.0,399.0 6.0,396.0 6.0,402.0" class="arrow"/>
+<polygon points="213.0,399.0 207.0,396.0 207.0,402.0" class="arrow"/>
+<text x="106.5" y="394.8" class="dimtext" text-anchor="middle">71</text>
+<line x1="-18.0" y1="0.0" x2="-18.0" y2="375.0" class="dim"/>
 <polygon points="-18.0,0.0 -21.0,6.0 -15.0,6.0" class="arrow"/>
-<polygon points="-18.0,450.0 -21.0,444.0 -15.0,444.0" class="arrow"/>
-<text x="-22.2" y="228.3" class="dimtext" text-anchor="end">150</text>
+<polygon points="-18.0,375.0 -21.0,369.0 -15.0,369.0" class="arrow"/>
+<text x="-22.2" y="190.8" class="dimtext" text-anchor="end">125</text>
 </g>
-<g transform="translate(1122.0,120.0)">
+<g transform="translate(1122.0,318.0)">
 <text x="0.0" y="-21.0" class="title" text-anchor="start">D  SIDE BOARDS</text>
-<text x="0.0" y="-7.5" class="sub" text-anchor="start">47 x 150 x 12, two off</text>
-<rect x="0.0" y="0.0" width="141.0" height="450.0" class="part"/>
-<text x="70.5" y="225.0" class="note" text-anchor="middle">2 off</text>
-<line x1="0.0" y1="474.0" x2="141.0" y2="474.0" class="dim"/>
-<polygon points="0.0,474.0 6.0,471.0 6.0,477.0" class="arrow"/>
-<polygon points="141.0,474.0 135.0,471.0 135.0,477.0" class="arrow"/>
-<text x="70.5" y="469.8" class="dimtext" text-anchor="middle">47</text>
-<line x1="-18.0" y1="0.0" x2="-18.0" y2="450.0" class="dim"/>
+<text x="0.0" y="-7.5" class="sub" text-anchor="start">47 x 125 x 12, two off</text>
+<rect x="0.0" y="0.0" width="141.0" height="375.0" class="part"/>
+<text x="70.5" y="187.5" class="note" text-anchor="middle">2 off</text>
+<line x1="0.0" y1="399.0" x2="141.0" y2="399.0" class="dim"/>
+<polygon points="0.0,399.0 6.0,396.0 6.0,402.0" class="arrow"/>
+<polygon points="141.0,399.0 135.0,396.0 135.0,402.0" class="arrow"/>
+<text x="70.5" y="394.8" class="dimtext" text-anchor="middle">47</text>
+<line x1="-18.0" y1="0.0" x2="-18.0" y2="375.0" class="dim"/>
 <polygon points="-18.0,0.0 -21.0,6.0 -15.0,6.0" class="arrow"/>
-<polygon points="-18.0,450.0 -21.0,444.0 -15.0,444.0" class="arrow"/>
-<text x="-22.2" y="228.3" class="dimtext" text-anchor="end">150</text>
+<polygon points="-18.0,375.0 -21.0,369.0 -15.0,369.0" class="arrow"/>
+<text x="-22.2" y="190.8" class="dimtext" text-anchor="end">125</text>
 </g>
 <g transform="translate(66.0,804.0)">
 <text x="0.0" y="-21.0" class="title" text-anchor="start">E  BLOCK</text>
@@ -147,7 +155,7 @@
 <text x="0.0" y="234.0" class="note" text-anchor="start">below it. ø10.25 bore from the bottom face into the chamber.</text>
 </g>
 <g transform="translate(450.0,804.0)">
-<text x="0.0" y="-7.5" class="sub" text-anchor="start">block, side face. Windway and chamber are cut into the left face.</text>
+<text x="0.0" y="-7.5" class="sub" text-anchor="start">block, side face</text>
 <rect x="0.0" y="0.0" width="141.0" height="159.0" class="part"/>
 <rect x="0.0" y="0.0" width="4.5" height="30.0" class="void"/>
 <rect x="0.0" y="30.0" width="90.0" height="45.0" class="void"/>
@@ -164,27 +172,58 @@
 <polygon points="153.0,30.0 150.0,24.0 156.0,24.0" class="arrow"/>
 <text x="157.2" y="18.3" class="dimtext" text-anchor="start">10</text>
 </g>
-<g transform="translate(864.0,786.0)">
+<g transform="translate(714.0,804.0)">
+<text x="0.0" y="-21.0" class="title" text-anchor="start">G  COLLAR</text>
+<text x="0.0" y="-7.5" class="sub" text-anchor="start">71 x 71 x 25 plus a turned spigot, one off, hardwood</text>
+<rect x="0.0" y="75.0" width="213.0" height="75.0" class="part"/>
+<rect x="28.1" y="0.0" width="156.9" height="75.0" class="part"/>
+<rect x="36.0" y="0.0" width="141.0" height="150.0" class="void"/>
+<text x="222.0" y="37.5" class="note" text-anchor="start">spigot ø52.3 x 25, turned</text>
+<text x="222.0" y="112.5" class="note" text-anchor="start">bore ø47 through</text>
+<line x1="28.1" y1="-15.0" x2="184.9" y2="-15.0" class="dim"/>
+<polygon points="28.1,-15.0 34.1,-18.0 34.1,-12.0" class="arrow"/>
+<polygon points="184.9,-15.0 178.9,-18.0 178.9,-12.0" class="arrow"/>
+<text x="106.5" y="-19.2" class="dimtext" text-anchor="middle">ø52.3</text>
+<line x1="0.0" y1="174.0" x2="213.0" y2="174.0" class="dim"/>
+<polygon points="0.0,174.0 6.0,171.0 6.0,177.0" class="arrow"/>
+<polygon points="213.0,174.0 207.0,171.0 207.0,177.0" class="arrow"/>
+<text x="106.5" y="169.8" class="dimtext" text-anchor="middle">71</text>
+<line x1="-15.0" y1="0.0" x2="-15.0" y2="75.0" class="dim"/>
+<polygon points="-15.0,0.0 -18.0,6.0 -12.0,6.0" class="arrow"/>
+<polygon points="-15.0,75.0 -18.0,69.0 -12.0,69.0" class="arrow"/>
+<text x="-19.2" y="40.8" class="dimtext" text-anchor="end">25</text>
+<line x1="-15.0" y1="75.0" x2="-15.0" y2="150.0" class="dim"/>
+<polygon points="-15.0,75.0 -18.0,81.0 -12.0,81.0" class="arrow"/>
+<polygon points="-15.0,150.0 -18.0,144.0 -12.0,144.0" class="arrow"/>
+<text x="-19.2" y="115.8" class="dimtext" text-anchor="end">25</text>
+<text x="0.0" y="201.0" class="note" text-anchor="start">The spigot cannot be turned on the glued box:</text>
+<text x="0.0" y="213.0" class="note" text-anchor="start">at ø52.3 the cut would break through the</text>
+<text x="0.0" y="225.0" class="note" text-anchor="start">corners of the 47 mm square interior. Turning</text>
+<text x="0.0" y="237.0" class="note" text-anchor="start">this one small piece instead avoids that.</text>
+</g>
+<g transform="translate(1080.0,804.0)">
 <text x="0.0" y="-21.0" class="title" text-anchor="start">F  ASSEMBLY</text>
-<text x="0.0" y="0.0" class="note" text-anchor="start">1. Cut the four boards and the block to size.</text>
+<text x="0.0" y="0.0" class="note" text-anchor="start">1. Cut the four boards, the block and the collar blank.</text>
 <text x="0.0" y="16.2" class="note" text-anchor="start">2. Front board: cut the window, then bevel its top edge</text>
 <text x="0.0" y="32.4" class="note" text-anchor="start">   at 19.3° on the inside face to form the labium.</text>
 <text x="0.0" y="48.6" class="note" text-anchor="start">3. Block: bore the inlet, cut the wind chamber pocket,</text>
 <text x="0.0" y="64.8" class="note" text-anchor="start">   then the 1.5 mm windway rabbet across the front face.</text>
-<text x="0.0" y="81.0" class="note" text-anchor="start">4. Glue the block between the two side boards, flush at</text>
-<text x="0.0" y="97.2" class="note" text-anchor="start">   the bottom ends, block front face toward the mouth.</text>
-<text x="0.0" y="113.4" class="note" text-anchor="start">5. Glue on the front and back boards. The gap between the</text>
-<text x="0.0" y="129.6" class="note" text-anchor="start">   block face and the front board is the windway.</text>
-<text x="0.0" y="145.8" class="note" text-anchor="start">6. Turn the top 30 mm round: tenon ø52.3 x 25 long.</text>
-<text x="0.0" y="162.0" class="note" text-anchor="start">   The window is 55 mm below, so the cut is continuous.</text>
-<text x="0.0" y="178.2" class="note" text-anchor="start">7. Seal the inside with shellac. Keep it out of the windway.</text>
-<text x="0.0" y="194.4" class="note" text-anchor="start"></text>
-<text x="0.0" y="210.6" class="note" text-anchor="start">The PVC pipe slides over the tenon and rests on the</text>
-<text x="0.0" y="226.8" class="note" text-anchor="start">shoulder, so the pipe's weight is carried in compression,</text>
-<text x="0.0" y="243.0" class="note" text-anchor="start">not by a socket in bending.</text>
-<text x="0.0" y="259.2" class="note" text-anchor="start"></text>
-<text x="0.0" y="275.4" class="note" text-anchor="start">Wood movement changes the windway gap, so use quartersawn</text>
-<text x="0.0" y="291.6" class="note" text-anchor="start">stock or void-free ply, and seal it.</text>
+<text x="0.0" y="81.0" class="note" text-anchor="start">4. Collar: bore ø47 through, then turn the</text>
+<text x="0.0" y="97.2" class="note" text-anchor="start">   ø52.3 x 25 spigot on one face.</text>
+<text x="0.0" y="113.4" class="note" text-anchor="start">5. Glue the block between the two side boards, flush at</text>
+<text x="0.0" y="129.6" class="note" text-anchor="start">   the bottom ends, block front face toward the mouth.</text>
+<text x="0.0" y="145.8" class="note" text-anchor="start">6. Glue on the front and back boards. The gap between the</text>
+<text x="0.0" y="162.0" class="note" text-anchor="start">   block face and the front board is the windway.</text>
+<text x="0.0" y="178.2" class="note" text-anchor="start">7. Glue the collar on top, bore concentric with the</text>
+<text x="0.0" y="194.4" class="note" text-anchor="start">   interior.</text>
+<text x="0.0" y="210.6" class="note" text-anchor="start">8. Seal the inside with shellac. Keep it out of the windway.</text>
+<text x="0.0" y="226.8" class="note" text-anchor="start"></text>
+<text x="0.0" y="243.0" class="note" text-anchor="start">The PVC pipe slides over the spigot and rests on the</text>
+<text x="0.0" y="259.2" class="note" text-anchor="start">collar shoulder, so the pipe's weight is carried in</text>
+<text x="0.0" y="275.4" class="note" text-anchor="start">compression, not by a socket in bending.</text>
+<text x="0.0" y="291.6" class="note" text-anchor="start"></text>
+<text x="0.0" y="307.8" class="note" text-anchor="start">Wood movement changes the windway gap, so use quartersawn</text>
+<text x="0.0" y="324.0" class="note" text-anchor="start">stock or void-free ply, and seal it.</text>
 </g>
 <text x="60" y="1130" style="font-size:10px;fill:#444">Critical for voicing, carried over from the tested printed head joint: windway 30 x 1.5 mm and 10 mm long, cut-up 17 mm, labium 19.3° and 32 mm wide, inlet ø10.25 mm. Other dimensions may suit stock and tooling.</text>
 <text x="60" y="1146" style="font-size:10px;fill:#444">Material: quartersawn hardwood or void-free Baltic birch ply, 12 mm; front board and block in dense hardwood (maple, cherry or pear). This design has not been built or voiced.</text>

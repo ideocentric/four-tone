@@ -60,8 +60,8 @@ four-tone/
 │   ├── pcb/              Six fan driver: KiCad project and fabrication files
 │   ├── art/              Silkscreen logo source
 │   └── datasheets/       Reference datasheets
-├── mechanical/           FreeCAD models for the head joint and fan caddy
-├── tools/                Tuning calculator; head joint rev 03 generator
+├── mechanical/           FreeCAD models: head joint, fan caddy, wooden version
+├── tools/                Tuning calculator; model and drawing generators
 └── docs/                 Build and tuning guides, images
 ```
 
