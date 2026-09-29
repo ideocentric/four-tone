@@ -78,9 +78,14 @@ With the supply wired to mains but **not** connected to the board:
    diode stops that feeding back into the computer (check a clone has one). With
    the supply off, the board would connect USB power to the supply's idle 5 V
    output, which loads the computer's port.
-3. Once the upload finishes, LEDs 1-4 (D11-D14) should light and fade in turn as
-   the sequence plays. Channels 5 and 6 stay dark; the firmware does not use them.
-4. Optionally open the Serial Plotter at 9600 baud to watch the four fan levels.
+3. **Run the board self test first**: `pio run -e selftest -t upload`, then open
+   the serial monitor at 9600 baud. It walks all six channels, one at a time,
+   saying what it is doing, so each LED can be checked against it. See
+   [`firmware/README.md`](../firmware/README.md#testing-the-board).
+4. Then upload the music firmware: `pio run -t upload`. LEDs 1-4 (D11-D14) should
+   light and fade in turn as the sequence plays. Channels 5 and 6 stay dark; the
+   music does not use them.
+5. Optionally open the Serial Plotter at 9600 baud to watch the four fan levels.
 
 ## 6. Connect the fans
 
@@ -88,8 +93,8 @@ With the supply wired to mains but **not** connected to the board:
    mark (pin 1, +12 V). If it lands on the other pin, move the contacts in the
    housing before plugging in.
 2. Power off. Plug in **one** fan, into FAN1, and power on. It should spin up when
-   LED 1 lights and slow down after. Listen for ticking or stalling during the
-   250 ms fade; brushless fans can react badly to PWM at low duty.
+   LED 1 lights and slow down after. The self test's PWM sweep is the better check
+   here: listen for ticking, stalling or a failure to restart as it fades.
 3. Power off and plug in the remaining fans: pipe 1 in FAN1, pipe 2 in FAN2, and
    so on.
 

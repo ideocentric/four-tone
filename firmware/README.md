@@ -7,6 +7,7 @@ four pipes, fading each fan up at the start of a note and down after it.
 | Path | Contents |
 | ---- | -------- |
 | `src/main.cpp` | `setup()` and `loop()`: starts serial, sets the tempo, runs the sequencer |
+| `src/selftest.cpp` | Bench test for the driver board, built as its own environment |
 | `include/sequence.h`, `src/sequence.cpp` | The sequencer: pin map, note and rhythm tables, timing |
 | `include/pipe.h`, `src/pipe.cpp` | One fan: PWM level, ramp up and down, note duration |
 | `arduino-original/` | The original Arduino IDE sketch, kept for reference only |
@@ -38,11 +39,40 @@ PlatformIO run configurations (Build, Upload, Monitor) that CLion creates from
 ### Arduino IDE
 
 The sources are plain C++, so the Arduino IDE can build them too: create a sketch
-folder, copy everything from `src/` and `include/` into it, and add an `.ino` file
-named after the folder (it can contain just a comment). Select **Arduino Nano** and
-the right processor (**ATmega328P** or **ATmega328P (Old Bootloader)**).
+folder, copy `src/main.cpp`, `src/pipe.cpp`, `src/sequence.cpp` and both headers
+from `include/` into it, and add an `.ino` file named after the folder (it can
+contain just a comment). Select **Arduino Nano** and the right processor
+(**ATmega328P** or **ATmega328P (Old Bootloader)**). Leave `src/selftest.cpp` out:
+it has its own `setup()` and `loop()`, so it only builds on its own.
 
 The firmware compiles to 4828 bytes of flash (15%) and 906 bytes of RAM (44%).
+
+## Testing the board
+
+`src/selftest.cpp` is a bench test for the driver board, with no code in common
+with the music firmware, so a fault it finds points at the board rather than the
+sequencer.
+
+```
+pio run -e selftest -t upload     # or -e selftest_old for an old bootloader
+pio device monitor                # 9600 baud
+```
+
+It walks the channels one at a time and narrates each step over serial:
+
+1. **Full on** for 2 s: the channel's LED should be at its brightest, and a fan
+   plugged into that connector should spin up.
+2. **A PWM sweep** down to off and back up over 3 s: the LED should fade
+   smoothly. This is where 2-wire brushless fans tick, stall or refuse to
+   restart, so listen to a fan here.
+3. **Off** for 0.8 s.
+
+After the sixth channel it runs all six together for 2 s, the largest current the
+board will draw, then pauses and repeats. Channels 5 and 6 are included, which
+the music firmware never uses.
+
+With no Nano fitted, or before the upload, every LED should be dark: the gate
+pull-downs hold the MOSFETs off.
 
 ## How the sequence works
 

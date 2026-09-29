@@ -8,7 +8,7 @@ and the commands to pick the work back up.
 | Area | State |
 | ---- | ----- |
 | Firmware | Written, converted to PlatformIO, builds for the Arduino Nano (4828 bytes flash, 906 bytes RAM). Timing verified by simulation. **Never run on the real board.** |
-| Driver board | Six fan driver rev A: schematic and layout done, ERC and DRC clean, fabrication files generated, ordered from JLCPCB on 2026-09-15, **arrived by 2026-09-28**. Not yet powered or tested. |
+| Driver board | Six fan driver rev A: schematic and layout done, ERC and DRC clean, fabrication files generated, ordered from JLCPCB on 2026-09-15, **arrived fully assembled by 2026-09-28**. Not yet powered or tested. |
 | Head joint rev 02 | Printed in FDM and **working**: it voices with a 2" PVC pipe. |
 | Head joint rev 03 | Hollowed for resin printing, 24% less material, quoted at $32.65 landed. **Modelled and exported only; never printed.** |
 | Fan caddy | Printed and in use. |
@@ -38,9 +38,7 @@ and the commands to pick the work back up.
 2. **Print settings** for the FDM head joint and caddy (material, layer height,
    infill, orientation), for `mechanical/README.md`.
 3. **Enclosure dimensions and layout**, for `mechanical/enclosure/`.
-4. **Whether the boards came assembled** by JLCPCB, or still need the
-   through-hole connectors (or everything) soldered by hand.
-5. **Whether to pursue the wooden head joint at all.** It was explored to answer
+4. **Whether to pursue the wooden head joint at all.** It was explored to answer
    "is this viable to have made?", and the answer is yes: files exist to quote it
    from, but nothing has been built, and the printed part already works.
 
@@ -55,6 +53,12 @@ The boards have arrived, so the next session is testing them. Have ready:
 - One fan, to test a single channel before fitting all four.
 - PlatformIO Core, or the Arduino IDE, to upload the firmware. **PlatformIO is
   not installed on this machine yet** (`brew install platformio`).
+
+The boards came fully assembled, so no soldering is needed. Start with the board
+self test (`pio run -e selftest -t upload`), which walks all six channels one at
+a time and narrates them over serial; see
+[firmware/README.md](../firmware/README.md#testing-the-board). Upload the music
+firmware afterwards.
 
 ## Next actions, in order
 
@@ -75,6 +79,7 @@ All generated files can be recreated. Run these from the repository root.
 | What | Command |
 | ---- | ------- |
 | Firmware build | `pio run` (or `pio run -e nano_old -t upload` for old-bootloader clones) |
+| Board self test | `pio run -e selftest -t upload`, then `pio device monitor` |
 | Schematic checks | `kicad-cli sch erc --severity-all hardware/pcb/four-tone-driver.kicad_sch` |
 | Board checks | `kicad-cli pcb drc --schematic-parity --severity-all hardware/pcb/four-tone-driver.kicad_pcb` |
 | Fabrication files | See `hardware/pcb/fabrication/rev-a/README.md` for the exact export settings |
