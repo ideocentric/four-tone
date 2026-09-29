@@ -8,7 +8,7 @@ and the commands to pick the work back up.
 | Area | State |
 | ---- | ----- |
 | Firmware | Written, converted to PlatformIO, builds for the Arduino Nano (4828 bytes flash, 906 bytes RAM). Timing verified by simulation. **Never run on the real board.** |
-| Driver board | Six fan driver rev A: schematic and layout done, ERC and DRC clean, fabrication files generated, **ordered from JLCPCB on 2026-09-15**. Arrival and assembly not yet recorded here. |
+| Driver board | Six fan driver rev A: schematic and layout done, ERC and DRC clean, fabrication files generated, ordered from JLCPCB on 2026-09-15, **arrived by 2026-09-28**. Not yet powered or tested. |
 | Head joint rev 02 | Printed in FDM and **working**: it voices with a 2" PVC pipe. |
 | Head joint rev 03 | Hollowed for resin printing, 24% less material, quoted at $32.65 landed. **Modelled and exported only; never printed.** |
 | Fan caddy | Printed and in use. |
@@ -38,17 +38,28 @@ and the commands to pick the work back up.
 2. **Print settings** for the FDM head joint and caddy (material, layer height,
    infill, orientation), for `mechanical/README.md`.
 3. **Enclosure dimensions and layout**, for `mechanical/enclosure/`.
-4. **Whether the boards have arrived**, and whether they were assembled by
-   JLCPCB or need hand soldering.
+4. **Whether the boards came assembled** by JLCPCB, or still need the
+   through-hole connectors (or everything) soldered by hand.
 5. **Whether to pursue the wooden head joint at all.** It was explored to answer
    "is this viable to have made?", and the answer is yes: files exist to quote it
    from, but nothing has been built, and the printed part already works.
 
+## Resume here: board bring-up
+
+The boards have arrived, so the next session is testing them. Have ready:
+
+- A multimeter, for the continuity and voltage checks.
+- The power supply, wired to mains, with its 110/220 V switch set correctly, and
+  leads to the board's screw terminal.
+- The Arduino Nano and a USB cable.
+- One fan, to test a single channel before fitting all four.
+- PlatformIO Core, or the Arduino IDE, to upload the firmware. **PlatformIO is
+  not installed on this machine yet** (`brew install platformio`).
+
 ## Next actions, in order
 
-1. **Bring up the board** when it arrives: follow [the build guide](build.md),
-   which checks the supply, then the board with no Nano fitted, then the
-   firmware, then one fan.
+1. **Bring up the board**: follow [the build guide](build.md), which checks the
+   supply, then the board with no Nano fitted, then the firmware, then one fan.
 2. **Print one head joint rev 03** and compare how it voices against the working
    rev 02 before ordering four.
 3. **Choose the notes, cut one test pipe, and calibrate** with
