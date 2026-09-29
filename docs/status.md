@@ -8,6 +8,7 @@ and the commands to pick the work back up.
 | Area | State |
 | ---- | ----- |
 | Firmware | Written, converted to PlatformIO, builds for the Arduino Nano (4828 bytes flash, 906 bytes RAM). Timing verified by simulation. **Never run on the real board.** |
+| Board self test | `firmware/src/selftest.cpp`, built as its own environment (3494 bytes). Walks the six channels and narrates them over serial. **Written but never run.** |
 | Driver board | Six fan driver rev A: schematic and layout done, ERC and DRC clean, fabrication files generated, ordered from JLCPCB on 2026-09-15, **arrived fully assembled by 2026-09-28**. Not yet powered or tested. |
 | Head joint rev 02 | Printed in FDM and **working**: it voices with a 2" PVC pipe. |
 | Head joint rev 03 | Hollowed for resin printing, 24% less material, quoted at $32.65 landed. **Modelled and exported only; never printed.** |
@@ -44,7 +45,9 @@ and the commands to pick the work back up.
 
 ## Resume here: board bring-up
 
-The boards have arrived, so the next session is testing them. Have ready:
+Last session ended 2026-09-28 with everything committed and pushed
+(`6139bb1`), nothing in progress. The boards have arrived, so the next session is
+testing them. Have ready:
 
 - A multimeter, for the continuity and voltage checks.
 - The power supply, wired to mains, with its 110/220 V switch set correctly, and
