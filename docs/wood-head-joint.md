@@ -6,9 +6,11 @@ into a square tube, with the windway formed as the **gap between the block face
 and the front board** rather than as a slot cut into one piece. A separately
 turned collar on top carries the spigot that the 2" PVC pipe slides over.
 
-**This design has not been built or voiced.** The voicing dimensions are carried
-over from the printed head joint (rev 02) that does work, but wood behaves
-differently and a maker will adjust by ear.
+**This is an exploration, not a chosen direction.** It exists to answer whether a
+wooden head joint is viable to have made by someone else: it is, and the files
+below are enough to get it quoted. Nothing has been built or voiced, the printed
+head joint already works, and the voicing dimensions carried over from it will
+need adjusting by ear in wood.
 
 ![Wooden head joint drawing](images/wood-head-joint.svg)
 

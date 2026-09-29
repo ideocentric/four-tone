@@ -30,11 +30,16 @@ flowchart LR
 
 | Part | State |
 | ---- | ----- |
-| Head joint and fan caddy | Designed and printed; the head joint is tested with 2" PVC |
+| Head joint and fan caddy | Printed and working; the head joint is tested with 2" PVC |
+| Head joint rev 03 | Hollowed for resin printing, quoted at $32.65 landed; not yet printed |
 | Enclosure | Built: an open-bottom wooden box. Dimensions not yet documented |
 | Driver board | Rev A designed and ordered from JLCPCB (2026-09-15) |
 | Firmware | Builds for the Nano; not yet run on the rev A board |
 | Pipes | Target notes and lengths not yet chosen |
+| Wooden head joint | Explored for viability: modelled, drawn and ready to quote. Not built, not chosen |
+
+[Status and how to resume](docs/status.md) has the full picture, the open
+questions and the commands to rebuild anything.
 
 ## Documentation
 
@@ -43,7 +48,8 @@ flowchart LR
 | [Build guide](docs/build.md) | Assembly, wiring, and step-by-step power-up checks |
 | [Tuning guide](docs/tuning.md) | Finding pipe lengths for your notes, with a calculator |
 | [Print sourcing](docs/print-sourcing.md) | Where to print the head joints: quotes, tariffs and landed cost |
-| [Wooden head joint](docs/wood-head-joint.md) | A wooden version of the head joint, drawn for quoting out |
+| [Wooden head joint](docs/wood-head-joint.md) | A wooden version, explored for viability and ready to quote |
+| [Status](docs/status.md) | Where the project stands, what is open, and how to resume |
 | [Firmware](firmware/README.md) | Building, uploading, how the sequence works, changing the music |
 | [Driver board](hardware/pcb/README.md) | Schematic, BOM, circuit and layout notes |
 | [Parts list](hardware/parts.md) | Everything to buy or make |
